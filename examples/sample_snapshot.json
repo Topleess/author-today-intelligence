@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-01-01T12:00:00Z",
+  "source": {"class": "synthetic_example", "url": "https://api.author.today/v1/catalog/search?sorting=popular"},
+  "works": [{"work_id": 1001, "title": "Example Book", "author_name": "Example Author", "author_slug": "example", "series_id": null, "series_title": null, "url": "https://author.today/work/1001"}],
+  "work_snapshots": [{"captured_at": "2026-01-01T12:00:00Z", "work_id": 1001, "views": 1000, "likes": 50, "comments": 10, "reviews": 1, "characters": 120000, "status": "Free", "price_rub": 0, "exclusive": false, "published_at": "2025-12-01T12:00:00Z", "modified_at": "2026-01-01T10:00:00Z"}],
+  "rankings": [{"captured_at": "2026-01-01T12:00:00Z", "ranking_url": "https://api.author.today/v1/catalog/search?sorting=popular", "ranking_type": "catalog_search", "position": 1, "work_id": 1001}]
+}

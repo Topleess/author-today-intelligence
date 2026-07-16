@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "author-today-intelligence"
+version = "0.1.0"
+description = "API-first snapshots and agent workflows for Author.Today analytics"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Open-source contributors"}]
+keywords = ["author-today", "analytics", "agents", "sqlite", "publishing"]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License"]
+
+[project.scripts]
+atintel = "atintel.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
