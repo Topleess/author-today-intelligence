@@ -1,0 +1,1243 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Author.Today Intelligence</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #171714;
+      --muted: #625f57;
+      --accent: #2f6b4f;
+      --accent-soft: #e5f0e9;
+      --attention: #9a5b24;
+      --attention-soft: #f7ebdd;
+      --neutral: #f4f2ed;
+      --surface: #ffffff;
+      --border: #dcd8cf;
+      --focus: #155eef;
+      --sidebar: #ece9e2;
+      --shadow: 0 12px 34px rgb(23 23 20 / 8%);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 0;
+      overflow-x: hidden;
+      background: var(--neutral);
+      color: var(--ink);
+      font: 400 16px/1.55 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    button, input, select { font: inherit; }
+    button, a, summary { -webkit-tap-highlight-color: transparent; }
+    button { color: inherit; }
+    a { color: var(--accent); text-underline-offset: .18em; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+    [hidden] { display: none !important; }
+    h1, h2, h3, p { overflow-wrap: anywhere; }
+    h1 {
+      margin: 0;
+      max-width: 22ch;
+      font-size: clamp(1.9rem, 4vw, 2.25rem);
+      font-weight: 650;
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 620;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+    }
+    h3 { margin: 0; font-size: 1.05rem; line-height: 1.35; }
+    p { margin: .6rem 0 0; }
+    svg { display: block; width: 100%; max-width: 100%; height: auto; }
+    code, pre { font: 12px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; }
+    pre { max-width: 100%; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: 8px;
+      left: 8px;
+      transform: translateY(-160%);
+      padding: 10px 14px;
+      border-radius: 6px;
+      background: var(--ink);
+      color: #fff;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .app-shell {
+      display: grid;
+      grid-template-columns: 248px minmax(0, 1fr);
+      width: 100%;
+      max-width: 100%;
+      min-height: 100vh;
+      min-height: 100dvh;
+    }
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 24px 16px 18px;
+      border-right: 1px solid var(--border);
+      background: var(--sidebar);
+    }
+    .brand { padding: 0 10px 24px; }
+    .brand__mark {
+      display: inline-grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 700;
+    }
+    .brand strong { display: block; font-size: .95rem; }
+    .brand span { color: var(--muted); font-size: .82rem; }
+    .desktop-nav { display: grid; gap: 4px; }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      min-height: 44px;
+      padding: 9px 11px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-weight: 560;
+      text-decoration: none;
+    }
+    .nav-link::before {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 auto;
+      border: 1.5px solid currentColor;
+      border-radius: 50%;
+      content: "";
+    }
+    .nav-link:hover { background: rgb(255 255 255 / 55%); color: var(--ink); }
+    .nav-link[aria-current="page"] { background: var(--surface); color: var(--ink); }
+    .nav-link[aria-current="page"]::before { border-color: var(--accent); background: var(--accent); }
+    .sidebar__foot {
+      margin-top: auto;
+      padding: 16px 10px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .workspace { min-width: 0; }
+    .topbar {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px clamp(20px, 4vw, 48px);
+      border-bottom: 1px solid var(--border);
+      background: rgb(244 242 237 / 92%);
+    }
+    .topbar__status { color: var(--muted); font-size: .85rem; }
+    .topbar__status::before {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      content: "";
+    }
+    .quiet-link {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: .88rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    main {
+      width: min(100%, 1120px);
+      min-width: 0;
+      margin: 0 auto;
+      padding: 36px clamp(20px, 4vw, 48px) 64px;
+    }
+    .app-section { min-width: 0; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .eyebrow {
+      margin: 0 0 7px;
+      color: var(--muted);
+      font-size: .75rem;
+      font-weight: 650;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .section-intro { max-width: 66ch; color: var(--muted); }
+    .period {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: .86rem;
+      text-align: right;
+    }
+
+    .card {
+      min-width: 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+    .decision-brief {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: start;
+      padding: 20px 22px;
+      border-left: 4px solid var(--accent);
+    }
+    .decision-brief__answer { margin-top: 6px; font-size: 1.1rem; font-weight: 610; }
+    .decision-brief__why { max-width: 70ch; color: var(--muted); }
+    .badges { display: flex; flex-wrap: wrap; gap: 6px; }
+    .badge {
+      display: inline-flex;
+      max-width: 100%;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 9px;
+      border-radius: 9999px;
+      background: var(--neutral);
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 650;
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+    .badge--fact { background: var(--accent-soft); color: var(--accent); }
+    .badge--caution { background: var(--attention-soft); color: var(--attention); }
+
+    .attention-label { margin: 24px 0 10px; color: var(--muted); font-size: .82rem; font-weight: 620; }
+    .attention-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.28fr) minmax(0, 1fr);
+      gap: 12px;
+      min-width: 0;
+    }
+    .attention-card {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      padding: 17px;
+    }
+    .attention-card:first-child:nth-last-child(n + 3) { grid-row: span 2; }
+    .attention-card--main { border-color: #b9cdbf; }
+    .attention-card__top {
+      display: flex;
+      min-width: 0;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .attention-card__title { margin-top: 8px; font-size: 1.14rem; }
+    .attention-card__reason { margin: 7px 0 14px; color: var(--muted); }
+    .attention-card__action {
+      align-self: flex-start;
+      min-height: 40px;
+      margin-top: auto;
+      padding: 8px 11px;
+      border: 0;
+      border-radius: 6px;
+      background: var(--ink);
+      color: #fff;
+      cursor: pointer;
+      font-weight: 620;
+    }
+    .attention-card__action:hover { background: var(--accent); }
+
+    details.evidence { min-width: 0; margin-top: 13px; border-top: 1px solid var(--border); }
+    details.evidence > summary {
+      min-height: 42px;
+      padding: 10px 0 6px;
+      color: var(--accent);
+      cursor: pointer;
+      font-size: .86rem;
+      font-weight: 620;
+    }
+    .evidence__body { min-width: 0; padding: 5px 0 4px; color: var(--muted); font-size: .86rem; }
+    .evidence__body > :first-child { margin-top: 0; }
+    .evidence-points { display: grid; gap: 8px; margin: 10px 0; padding: 0; list-style: none; }
+    .evidence-point {
+      min-width: 0;
+      padding: 10px;
+      border-radius: 8px;
+      background: var(--neutral);
+      overflow-wrap: anywhere;
+    }
+
+    .toolbar {
+      display: flex;
+      min-width: 0;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 16px;
+    }
+    .field { min-width: min(100%, 260px); flex: 1 1 280px; }
+    .field label, .select-field label {
+      display: block;
+      margin: 0 0 5px;
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 620;
+    }
+    input, select {
+      width: 100%;
+      min-height: 44px;
+      max-width: 100%;
+      padding: 9px 11px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--ink);
+    }
+    .select-field { min-width: min(100%, 220px); flex: 0 1 240px; }
+    .split-view {
+      display: grid;
+      grid-template-columns: minmax(260px, .82fr) minmax(0, 1.4fr);
+      gap: 16px;
+      min-width: 0;
+      align-items: start;
+    }
+    .entity-list { display: grid; min-width: 0; gap: 7px; }
+    .entity-row {
+      width: 100%;
+      min-width: 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px 12px;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--surface);
+      color: var(--ink);
+      text-align: left;
+      cursor: pointer;
+    }
+    .entity-row:hover { border-color: #a9b9ad; background: #fbfdfb; }
+    .entity-row[aria-current="true"] { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
+    .entity-row__title { min-width: 0; font-weight: 620; overflow-wrap: anywhere; }
+    .entity-row__meta { color: var(--muted); font-size: .8rem; }
+    .entity-row__number { font-variant-numeric: tabular-nums; font-weight: 650; white-space: nowrap; }
+    .detail-panel { min-width: 0; padding: 20px; }
+    .detail-head { display: flex; min-width: 0; justify-content: space-between; gap: 14px; align-items: start; }
+    .detail-head > div { min-width: 0; }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .metric { min-width: 0; padding: 11px; border-radius: 8px; background: var(--neutral); }
+    .metric__label { color: var(--muted); font-size: .75rem; }
+    .metric__value { margin-top: 2px; font-size: 1.15rem; font-weight: 650; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+    .sparse-state {
+      min-width: 0;
+      margin-top: 14px;
+      padding: 13px 14px;
+      border-radius: 9px;
+      background: var(--attention-soft);
+      color: #70451f;
+    }
+    .sparse-state p { margin: 0; }
+    .sparse-state__detail { margin-top: 5px !important; color: var(--muted); font-size: .86rem; }
+    .empty-result { padding: 18px; color: var(--muted); text-align: center; }
+
+    .chart-wrap { min-width: 0; margin: 13px 0; }
+    .chart {
+      overflow: visible;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fbfaf7;
+    }
+    figcaption { margin-top: 7px; color: var(--muted); font-size: .78rem; }
+
+    .tag-list { display: flex; min-width: 0; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; }
+    .tag-button {
+      max-width: 100%;
+      min-height: 40px;
+      padding: 7px 10px;
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      background: var(--surface);
+      color: var(--ink);
+      cursor: pointer;
+      overflow-wrap: anywhere;
+    }
+    .tag-button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+    .reader-list { display: grid; gap: 10px; }
+    .reader-card { min-width: 0; padding: 16px; }
+    .reader-card q { display: block; margin-top: 7px; font-size: 1rem; }
+    .reader-card__body { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .source-panel { min-width: 0; padding: 18px; }
+    .source-panel--wide { grid-column: 1 / -1; }
+    .source-list { display: grid; gap: 8px; margin-top: 12px; }
+    .source-row { min-width: 0; padding: 11px; border-radius: 8px; background: var(--neutral); overflow-wrap: anywhere; }
+    .notice {
+      border-left: 3px solid var(--attention);
+      background: var(--attention-soft);
+      color: #70451f;
+    }
+    .loading { padding: 18px 0; color: var(--muted); }
+    .fatal-error { padding: 18px; border: 1px solid #bd7b55; border-radius: 9px; background: #fff2eb; color: #743a1f; }
+
+    .mobile-nav { display: none; }
+
+    @media (max-width: 900px) {
+      .app-shell { grid-template-columns: 208px minmax(0, 1fr); }
+      .split-view { grid-template-columns: 1fr; }
+      .entity-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 760px) {
+      html { scroll-behavior: auto; }
+      .app-shell { display: block; }
+      .sidebar { display: none; }
+      .topbar { min-height: 56px; padding: 8px 16px; }
+      .topbar .quiet-link { display: none; }
+      main { padding: 24px 16px calc(94px + env(safe-area-inset-bottom)); }
+      .section-head { display: block; margin-bottom: 18px; }
+      .period { margin-top: 10px; text-align: left; }
+      .decision-brief { grid-template-columns: 1fr; padding: 17px; }
+      .attention-grid, .source-grid { grid-template-columns: 1fr; }
+      .attention-card:first-child:nth-last-child(n + 3) { grid-row: auto; }
+      .source-panel--wide { grid-column: auto; }
+      .toolbar { display: grid; grid-template-columns: 1fr; }
+      .field, .select-field { min-width: 0; width: 100%; }
+      .entity-list { grid-template-columns: 1fr; }
+      .entity-row { grid-template-columns: minmax(0, 1fr) auto; }
+      .detail-panel { padding: 16px; }
+      .detail-head { display: block; }
+      .detail-head .badge { margin-top: 9px; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .mobile-nav {
+        position: fixed;
+        z-index: 40;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        min-width: 0;
+        padding: 7px 5px calc(7px + env(safe-area-inset-bottom));
+        border-top: 1px solid var(--border);
+        background: rgb(255 255 255 / 97%);
+        box-shadow: 0 -10px 30px rgb(23 23 20 / 7%);
+      }
+      .mobile-nav .nav-link {
+        min-width: 0;
+        min-height: 50px;
+        display: grid;
+        place-items: center;
+        gap: 1px;
+        padding: 5px 2px;
+        font-size: clamp(.66rem, 3vw, .75rem);
+        text-align: center;
+        overflow-wrap: normal;
+      }
+      .mobile-nav .nav-link::before { width: 6px; height: 6px; }
+    }
+    @media (max-width: 390px) {
+      .topbar__status { font-size: .78rem; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .attention-card__top { display: block; }
+      .attention-card__top .badge { margin-top: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">К содержанию</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Навигация по данным">
+      <div class="brand">
+        <div class="brand__mark" aria-hidden="true">A</div>
+        <strong>Данные автора</strong>
+        <span>Сначала ответ, затем доказательство</span>
+      </div>
+      <nav class="desktop-nav" aria-label="Разделы">
+        <a class="nav-link" href="#overview" data-go-section="overview" aria-current="page">Обзор</a>
+        <a class="nav-link" href="#books" data-go-section="books">Книги</a>
+        <a class="nav-link" href="#rankings" data-go-section="rankings">Топы</a>
+        <a class="nav-link" href="#readers" data-go-section="readers">Читатели</a>
+        <a class="nav-link" href="#sources" data-go-section="sources">Источники</a>
+      </nav>
+      <div class="sidebar__foot">
+        <div>Только чтение</div>
+        <div id="sidebar-updated">Обновление данных…</div>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar__status">Локальные данные · только чтение</div>
+        <a class="quiet-link" href="#sources" data-go-section="sources">Как собраны данные</a>
+      </header>
+
+      <main id="main-content" tabindex="-1">
+        <div id="fatal-error" class="fatal-error" role="alert" hidden></div>
+
+        <section id="overview" class="app-section" data-section="overview" aria-labelledby="overview-title">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow" id="author-name">Автор</p>
+              <h1 id="overview-title" tabindex="-1">Что изменилось</h1>
+            </div>
+            <div class="period" id="overview-period">Период уточняется…</div>
+          </div>
+          <div id="decision-brief" class="loading" role="status" aria-live="polite">Собираем проверяемую сводку…</div>
+          <p class="attention-label">Что проверить сначала</p>
+          <div id="attention" class="attention-grid" aria-live="polite"></div>
+        </section>
+
+        <section id="books" class="app-section" data-section="books" aria-labelledby="books-title" hidden>
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Портфель</p>
+              <h1 id="books-title" tabindex="-1">Книги</h1>
+              <p class="section-intro">Последние значения и сравнение только сопоставимых снимков. Архивные точки не соединяются с регулярными.</p>
+            </div>
+          </div>
+          <div class="toolbar">
+            <div class="field">
+              <label for="book-search">Найти книгу</label>
+              <input id="book-search" type="search" placeholder="Название книги" autocomplete="off">
+            </div>
+            <div class="select-field">
+              <label for="book-sort">Порядок</label>
+              <select id="book-sort">
+                <option value="attention">Сначала с изменениями</option>
+                <option value="views">По просмотрам</option>
+                <option value="title">По названию</option>
+              </select>
+            </div>
+          </div>
+          <div class="split-view">
+            <div id="book-list" class="entity-list" aria-label="Список книг"></div>
+            <div id="book-detail" class="card detail-panel" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section id="rankings" class="app-section" data-section="rankings" aria-labelledby="rankings-title" hidden>
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Наблюдаемое окно</p>
+              <h1 id="rankings-title" tabindex="-1">Топы</h1>
+              <p class="section-intro">Показываем только позиции внутри жанрового top-25. Если книги нет в этом окне, это ничего не говорит о полном рейтинге.</p>
+            </div>
+          </div>
+          <div class="split-view">
+            <div id="ranking-list" class="entity-list" aria-label="Позиции книг"></div>
+            <div id="ranking-detail" class="card detail-panel" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section id="readers" class="app-section" data-section="readers" aria-labelledby="readers-title" hidden>
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Выбранная выборка</p>
+              <h1 id="readers-title" tabindex="-1">Читатели</h1>
+              <p class="section-intro">Наблюдения из вручную выбранных комментариев. Малую выборку нельзя выдавать за мнение всех читателей.</p>
+            </div>
+          </div>
+          <div id="reader-state"></div>
+          <div id="tag-list" class="tag-list" aria-label="Темы комментариев"></div>
+          <div id="reader-list" class="reader-list" aria-live="polite"></div>
+          <details class="evidence" id="reader-profiles-panel">
+            <summary>Показать участников выборки</summary>
+            <div id="reader-profiles" class="evidence__body"></div>
+          </details>
+        </section>
+
+        <section id="sources" class="app-section" data-section="sources" aria-labelledby="sources-title" hidden>
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Проверка выводов</p>
+              <h1 id="sources-title" tabindex="-1">Источники</h1>
+              <p class="section-intro">Здесь видны охват, происхождение и ограничения данных. Технические детали раскрываются отдельно.</p>
+            </div>
+          </div>
+          <div class="source-grid">
+            <article class="card source-panel">
+              <h2>Автор</h2>
+              <div id="authors" class="source-list"></div>
+            </article>
+            <article class="card source-panel">
+              <h2>Охват</h2>
+              <div id="coverage" class="source-list"></div>
+            </article>
+            <article class="card source-panel source-panel--wide">
+              <h2>Качество источников</h2>
+              <div id="source-quality" class="source-list"></div>
+            </article>
+            <article class="card source-panel source-panel--wide">
+              <h2>Архивные контрольные точки</h2>
+              <p class="section-intro">Архив фрагментарен и не образует непрерывную историю.</p>
+              <div id="archives" class="source-list"></div>
+            </article>
+            <article class="card source-panel source-panel--wide notice">
+              <h2>Приватная автоматизация отключена</h2>
+              <p>Официальная оферта запрещает скриптовый сбор. Приватные отчёты импортируются вручную; пароль, cookies и данные сессии приложение не принимает.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Основные разделы">
+    <a class="nav-link" href="#overview" data-go-section="overview" aria-current="page">Обзор</a>
+    <a class="nav-link" href="#books" data-go-section="books">Книги</a>
+    <a class="nav-link" href="#rankings" data-go-section="rankings">Топы</a>
+    <a class="nav-link" href="#readers" data-go-section="readers">Читатели</a>
+  </nav>
+
+  <template id="sparse-0" data-sparse-state="0">
+    <p>Данных пока нет. В разделе «Источники» указано, чего не хватает.</p>
+  </template>
+  <template id="sparse-1" data-sparse-state="1">
+    <p>Есть одна точка. Динамику считать рано.</p>
+  </template>
+  <template id="sparse-2plus" data-sparse-state="2+">
+    <p>Есть две или больше сопоставимых точки. Изменение видно, но его причина не доказана.</p>
+  </template>
+
+  <script>
+    "use strict";
+
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+    const collator = new Intl.Collator("ru", { sensitivity: "base", numeric: true });
+    const numberFormat = new Intl.NumberFormat("ru-RU");
+    const dateFormat = new Intl.DateTimeFormat("ru-RU", {
+      day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit"
+    });
+    const state = {
+      summary: {}, works: [], archives: [], tags: [], authors: [], rankings: [], quality: [],
+      profiles: [], comments: [], snapshots: new Map(), selectedWork: null, selectedRank: null,
+      selectedTag: null, activeSection: "overview"
+    };
+
+    const esc = value => String(value ?? "").replace(/[&<>"']/g, character => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;"
+    })[character]);
+
+    function safeHref(value) {
+      try {
+        const url = new URL(String(value));
+        return url.protocol === "https:" || url.protocol === "http:" ? esc(url.href) : "";
+      } catch (_) { return ""; }
+    }
+
+    function externalLink(value, label) {
+      const href = safeHref(value);
+      return href ? `<a href="${href}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>` : esc(label);
+    }
+
+    async function getJSON(path) {
+      const response = await fetch(path, { headers: { "Accept": "application/json" } });
+      if (!response.ok) throw new Error(`Не удалось загрузить ${path}: ${response.status}`);
+      return response.json();
+    }
+
+    function numeric(value) { return value === null || value === undefined ? null : Number(value); }
+    function formatNumber(value) { return value === null || value === undefined ? "—" : numberFormat.format(Number(value)); }
+    function formatDate(value) {
+      if (!value) return "время не указано";
+      const date = new Date(value);
+      return Number.isNaN(date.getTime()) ? String(value) : dateFormat.format(date);
+    }
+    function plural(value, forms) {
+      const number = Math.abs(Number(value)) % 100;
+      const last = number % 10;
+      if (number > 10 && number < 20) return forms[2];
+      if (last > 1 && last < 5) return forms[1];
+      if (last === 1) return forms[0];
+      return forms[2];
+    }
+    function deltaValue(current, previous) {
+      const a = numeric(current), b = numeric(previous);
+      return a === null || b === null || Number.isNaN(a) || Number.isNaN(b) ? null : a - b;
+    }
+    function deltaLabel(value, noun) {
+      if (value === null) return `${noun}: нет сопоставимых значений`;
+      const sign = value > 0 ? "+" : "";
+      return `${noun}: ${sign}${formatNumber(value)}`;
+    }
+    function sourceLabel(sourceClass) {
+      const value = String(sourceClass || "unknown");
+      if (value === "public_guest") return "Регулярный публичный снимок";
+      if (value.includes("archive") || value === "wayback" || value === "commoncrawl") return "Архивная точка";
+      if (value.startsWith("manual")) return "Ручной импорт";
+      return "Источник с сохранённым описанием";
+    }
+    function sourceBadge(sourceClass) {
+      const caution = /archive|wayback|commoncrawl|manual/i.test(String(sourceClass || ""));
+      return `<span class="badge ${caution ? "badge--caution" : "badge--fact"}">${esc(sourceLabel(sourceClass))}</span>`;
+    }
+    function modeLabel(mode) {
+      return ({ popular: "популярные", trending: "набирающие популярность", other: "другой список" })[mode] || "другой список";
+    }
+    function stanceLabel(stance) {
+      return ({ positive: "положительное", negative: "критическое", neutral: "нейтральное", mixed: "смешанное" })[stance] || stance || "без оценки";
+    }
+    function statementLabel(kind) {
+      return ({ observation: "наблюдение", question: "вопрос", praise: "похвала", criticism: "критика", suggestion: "предложение", author_reply: "ответ автора", service: "служебное" })[kind] || "не классифицировано";
+    }
+    function positionLabel(position) { return `${formatNumber(position)}-е место в top-25`; }
+    function sortedPoints(rows) {
+      return [...(rows || [])].sort((a, b) => String(a.captured_at || "").localeCompare(String(b.captured_at || "")));
+    }
+    function isRegularSource(sourceClass) { return sourceClass === "public_guest"; }
+    function isArchiveSource(sourceClass) { return /archive|wayback|commoncrawl/i.test(String(sourceClass || "")); }
+
+    function seriesGroups(rows) {
+      const groups = new Map();
+      sortedPoints(rows).forEach(row => {
+        const key = row.source_class || "unknown";
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(row);
+      });
+      return Array.from(groups, ([sourceClass, points]) => ({ sourceClass, points }));
+    }
+
+    function comparableSeries(rows) {
+      const groups = seriesGroups(rows);
+      groups.sort((a, b) => {
+        const regular = Number(isRegularSource(b.sourceClass)) - Number(isRegularSource(a.sourceClass));
+        if (regular) return regular;
+        const enough = Number(b.points.length >= 2) - Number(a.points.length >= 2);
+        if (enough) return enough;
+        const latest = String(b.points.at(-1)?.captured_at || "").localeCompare(String(a.points.at(-1)?.captured_at || ""));
+        return latest || collator.compare(a.sourceClass, b.sourceClass);
+      });
+      return groups[0] || { sourceClass: "unknown", points: [] };
+    }
+
+    function sparseMarkup(count, detail = "") {
+      const key = count === 0 ? "0" : count === 1 ? "1" : "2plus";
+      const template = document.getElementById(`sparse-${key}`);
+      const standard = count === 2
+        ? "<p>Две точки, это ещё не устойчивый тренд.</p>"
+        : template.innerHTML;
+      return `<div class="sparse-state" data-state="${count === 0 ? "0" : count === 1 ? "1" : "2+"}">
+        ${standard}${detail ? `<p class="sparse-state__detail">${esc(detail)}</p>` : ""}
+      </div>`;
+    }
+
+    function workSignals() {
+      return state.works.map(work => {
+        const series = comparableSeries(state.snapshots.get(String(work.work_id)) || []);
+        if (series.points.length < 2) return null;
+        const previous = series.points.at(-2), current = series.points.at(-1);
+        const viewDelta = deltaValue(current.views, previous.views);
+        const likeDelta = deltaValue(current.likes, previous.likes);
+        if ((viewDelta === null || viewDelta === 0) && (likeDelta === null || likeDelta === 0)) return null;
+        return {
+          type: "work", key: `work-${work.work_id}`, work, series, previous, current, viewDelta, likeDelta,
+          strength: Math.abs(viewDelta || 0), secondaryStrength: Math.abs(likeDelta || 0)
+        };
+      }).filter(Boolean).sort((a, b) =>
+        b.strength - a.strength || b.secondaryStrength - a.secondaryStrength ||
+        collator.compare(a.work.title, b.work.title) || Number(a.work.work_id) - Number(b.work.work_id)
+      );
+    }
+
+    function rankingGroups() {
+      const groups = new Map();
+      state.rankings.forEach(row => {
+        const key = [row.category || "", row.mode || "", row.title || ""].join("\u241f");
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(row);
+      });
+      return Array.from(groups, ([key, rows]) => ({ key, rows: sortedPoints(rows) }));
+    }
+
+    function rankSignals() {
+      return rankingGroups().map(group => {
+        if (group.rows.length < 2) return null;
+        const previous = group.rows.at(-2), current = group.rows.at(-1);
+        const movement = deltaValue(previous.position, current.position);
+        if (!movement) return null;
+        return { type: "rank", key: `rank-${group.key}`, group, previous, current, movement, strength: Math.abs(movement) };
+      }).filter(Boolean).sort((a, b) =>
+        b.strength - a.strength || Number(a.current.position) - Number(b.current.position) ||
+        collator.compare(a.current.title, b.current.title) || collator.compare(a.group.key, b.group.key)
+      );
+    }
+
+    function currentRankSignals() {
+      return rankingGroups().map(group => {
+        const current = group.rows.at(-1);
+        return { type: "rank-current", key: `rank-current-${group.key}`, group, current, strength: Number(current.position) };
+      }).sort((a, b) =>
+        a.strength - b.strength || collator.compare(a.current.title, b.current.title) || collator.compare(a.group.key, b.group.key)
+      );
+    }
+
+    function readerSignals() {
+      return [...state.tags].sort((a, b) =>
+        Number(b.count || 0) - Number(a.count || 0) || collator.compare(a.taxonomy_path, b.taxonomy_path) || collator.compare(a.stance, b.stance)
+      ).map(tag => ({ type: "reader", key: `reader-${tag.taxonomy_path}-${tag.stance}`, tag }));
+    }
+
+    function singlePointSignals() {
+      return state.works.map(work => {
+        const rows = sortedPoints(state.snapshots.get(String(work.work_id)) || []);
+        const current = rows.at(-1);
+        return current ? { type: "single", key: `single-${work.work_id}`, work, current } : null;
+      }).filter(Boolean).sort((a, b) =>
+        Number(b.current.views || -1) - Number(a.current.views || -1) || collator.compare(a.work.title, b.work.title)
+      );
+    }
+
+    function buildAttention() {
+      const changedWorks = workSignals();
+      const changedRanks = rankSignals();
+      let signals = [...changedWorks, ...changedRanks];
+      const seen = new Set(signals.map(item => item.key));
+      const append = candidates => {
+        for (const item of candidates) {
+          if (signals.length >= 3) break;
+          if (!seen.has(item.key)) { signals.push(item); seen.add(item.key); }
+        }
+      };
+      if (!signals.length) append(currentRankSignals());
+      append(readerSignals());
+      if (!signals.length) append(singlePointSignals());
+      return signals.slice(0, 3);
+    }
+
+    function overallPeriod() {
+      const times = [];
+      state.snapshots.forEach(rows => rows.forEach(row => row.captured_at && times.push(row.captured_at)));
+      state.rankings.forEach(row => row.captured_at && times.push(row.captured_at));
+      if (!times.length) return "Период пока не определён";
+      times.sort();
+      const first = times[0], last = times.at(-1);
+      return first === last ? `Снимок: ${formatDate(last)}` : `${formatDate(first)} — ${formatDate(last)}`;
+    }
+
+    function attentionCard(signal, index) {
+      let title = "", reason = "", badge = "Факт", action = "Открыть", target = "overview", selector = "", evidence = "";
+      if (signal.type === "work") {
+        title = signal.work.title;
+        reason = `${deltaLabel(signal.viewDelta, "Просмотры")}; ${deltaLabel(signal.likeDelta, "лайки").toLowerCase()} с прошлого сопоставимого снимка.`;
+        badge = index === 0 ? "Проверить первой" : "Изменение книги";
+        target = "books"; selector = `data-select-work="${esc(signal.work.work_id)}"`; action = "Открыть книгу";
+        evidence = `<p><strong>${formatDate(signal.previous.captured_at)}</strong>: ${formatNumber(signal.previous.views)} просмотров, ${formatNumber(signal.previous.likes)} лайков.</p>
+          <p><strong>${formatDate(signal.current.captured_at)}</strong>: ${formatNumber(signal.current.views)} просмотров, ${formatNumber(signal.current.likes)} лайков.</p>
+          <p>${sourceBadge(signal.series.sourceClass)}</p>`;
+      } else if (signal.type === "rank") {
+        title = signal.current.title;
+        const direction = signal.movement > 0 ? `выше на ${formatNumber(signal.movement)}` : `ниже на ${formatNumber(Math.abs(signal.movement))}`;
+        reason = `${positionLabel(signal.current.position)} в категории «${signal.current.category}», ${modeLabel(signal.current.mode)}; ${direction}.`;
+        badge = "Изменение позиции"; target = "rankings"; selector = `data-select-rank="${esc(signal.group.key)}"`; action = "Открыть топы";
+        evidence = `<p>${formatDate(signal.previous.captured_at)}: ${positionLabel(signal.previous.position)}.</p>
+          <p>${formatDate(signal.current.captured_at)}: ${positionLabel(signal.current.position)}.</p>
+          <p>Сравниваются точки одной категории и одного режима.</p>`;
+      } else if (signal.type === "rank-current") {
+        title = signal.current.title;
+        reason = `${positionLabel(signal.current.position)} в категории «${signal.current.category}», ${modeLabel(signal.current.mode)}. Предыдущей сопоставимой позиции нет.`;
+        badge = "Наблюдаемая позиция"; target = "rankings"; selector = `data-select-rank="${esc(signal.group.key)}"`; action = "Открыть топы";
+        evidence = `<p>Точка за ${formatDate(signal.current.captured_at)}.</p><p>По одной позиции нельзя судить об изменении.</p>`;
+      } else if (signal.type === "reader") {
+        title = signal.tag.taxonomy_path || "Тема без названия";
+        reason = `${formatNumber(signal.tag.count)} ${plural(signal.tag.count, ["наблюдение", "наблюдения", "наблюдений"])} в выбранной выборке; оценка: ${stanceLabel(signal.tag.stance)}.`;
+        badge = "Читательское наблюдение"; target = "readers"; selector = `data-select-tag="${esc(signal.tag.taxonomy_path || "")}"`; action = "Открыть комментарии";
+        evidence = `<p>Тема подтверждается только показанными комментариями. Это не мнение всех читателей.</p>`;
+      } else {
+        title = signal.work.title;
+        reason = `${formatNumber(signal.current.views)} просмотров в единственной сопоставимой точке. Динамику считать рано.`;
+        badge = "Нужна ещё точка"; target = "books"; selector = `data-select-work="${esc(signal.work.work_id)}"`; action = "Открыть книгу";
+        evidence = `<p>${formatDate(signal.current.captured_at)}: ${formatNumber(signal.current.views)} просмотров, ${formatNumber(signal.current.likes)} лайков.</p>
+          <p>${sourceBadge(signal.current.source_class)}</p>`;
+      }
+      return `<article class="card attention-card ${index === 0 ? "attention-card--main" : ""}">
+        <div class="attention-card__top"><span class="badge ${index === 0 ? "badge--fact" : ""}">${esc(badge)}</span></div>
+        <h3 class="attention-card__title">${esc(title)}</h3>
+        <p class="attention-card__reason">${esc(reason)}</p>
+        <button class="attention-card__action" type="button" data-go-section="${target}" ${selector}>${esc(action)}</button>
+        <details class="evidence"><summary>Показать данные</summary><div class="evidence__body">${evidence}
+          <p><a href="#sources" data-go-section="sources">Проверить источник и ограничения</a></p></div></details>
+      </article>`;
+    }
+
+    function renderOverview() {
+      const allRows = Array.from(state.snapshots.values()).flat();
+      const comparable = state.works.filter(work => comparableSeries(state.snapshots.get(String(work.work_id)) || []).points.length >= 2);
+      const changedWorks = workSignals();
+      const changedRanks = rankSignals();
+      let answer, why, count;
+      if (!allRows.length) {
+        answer = "Пока нечего сравнивать.";
+        why = "Нет публичных снимков книг. Откройте источники, чтобы проверить охват.";
+        count = 0;
+      } else if (!comparable.length) {
+        answer = "По книгам пока одна сопоставимая точка.";
+        why = "Динамику считать рано. Следующий снимок даст первое осторожное сравнение.";
+        count = 1;
+      } else if (changedWorks.length) {
+        answer = `Есть изменения у ${formatNumber(changedWorks.length)} ${plural(changedWorks.length, ["книги", "книг", "книг"])}.`;
+        why = `Сначала проверьте «${changedWorks[0].work.title}»: это самое заметное фактическое изменение просмотров между двумя последними сопоставимыми снимками.`;
+        count = comparableSeries(state.snapshots.get(String(changedWorks[0].work.work_id)) || []).points.length;
+      } else if (changedRanks.length) {
+        answer = "Изменились позиции в наблюдаемом top-25.";
+        why = `Сначала проверьте «${changedRanks[0].current.title}». Показана разница между точками одной категории.`;
+        count = changedRanks[0].group.rows.length;
+      } else {
+        answer = "По сопоставимым точкам заметных изменений нет.";
+        why = "Это описание сохранённых значений, а не оценка успеха книги.";
+        count = Math.max(...comparable.map(work => comparableSeries(state.snapshots.get(String(work.work_id)) || []).points.length));
+      }
+      const level = count === 0 ? "Нет данных" : count === 1 ? "Одна точка" : count === 2 ? "Две точки" : `${formatNumber(count)} точек`;
+      const caution = count < 3;
+      $("#decision-brief").className = "card decision-brief";
+      $("#decision-brief").innerHTML = `<div>
+          <span class="badge badge--fact">Проверяемый вывод</span>
+          <div class="decision-brief__answer">${esc(answer)}</div>
+          <p class="decision-brief__why">${esc(why)}</p>
+        </div>
+        <div class="badges"><span class="badge ${caution ? "badge--caution" : "badge--fact"}">${esc(level)}</span></div>`;
+      $("#overview-period").textContent = overallPeriod();
+      const attention = buildAttention();
+      $("#attention").innerHTML = attention.length
+        ? attention.map(attentionCard).join("")
+        : sparseMarkup(0, "Нет объектов, которые можно показать без догадок.");
+    }
+
+    function workSortValue(work) {
+      const rows = state.snapshots.get(String(work.work_id)) || [];
+      const series = comparableSeries(rows);
+      if (series.points.length < 2) return { changed: 0, strength: -1 };
+      const current = series.points.at(-1), previous = series.points.at(-2);
+      const delta = deltaValue(current.views, previous.views);
+      return { changed: delta ? 1 : 0, strength: Math.abs(delta || 0) };
+    }
+
+    function renderBookList() {
+      const query = $("#book-search").value.trim().toLocaleLowerCase("ru");
+      const order = $("#book-sort").value;
+      const works = state.works.filter(work => work.title.toLocaleLowerCase("ru").includes(query));
+      works.sort((a, b) => {
+        if (order === "title") return collator.compare(a.title, b.title);
+        if (order === "views") return Number(b.views || -1) - Number(a.views || -1) || collator.compare(a.title, b.title);
+        const left = workSortValue(a), right = workSortValue(b);
+        return right.changed - left.changed || right.strength - left.strength || Number(b.views || -1) - Number(a.views || -1) || collator.compare(a.title, b.title);
+      });
+      if (!state.works.length) {
+        $("#book-list").innerHTML = sparseMarkup(0, "Нет снимков портфеля.");
+        $("#book-detail").innerHTML = "<p class=\"empty-result\">Книга не выбрана.</p>";
+        return;
+      }
+      if (!works.length) {
+        $("#book-list").innerHTML = "<div class=\"card empty-result\">По этому запросу книг нет.</div>";
+        return;
+      }
+      if (!state.selectedWork || !works.some(work => String(work.work_id) === String(state.selectedWork))) state.selectedWork = String(works[0].work_id);
+      $("#book-list").innerHTML = works.map(work => {
+        const series = comparableSeries(state.snapshots.get(String(work.work_id)) || []);
+        let meta = "Динамику считать рано";
+        if (series.points.length >= 2) {
+          const delta = deltaValue(series.points.at(-1).views, series.points.at(-2).views);
+          meta = delta === null ? "Нет сопоставимых просмотров" : deltaLabel(delta, "Просмотры");
+        }
+        return `<button type="button" class="entity-row" data-select-work="${esc(work.work_id)}" aria-current="${String(work.work_id) === String(state.selectedWork)}">
+          <span><span class="entity-row__title">${esc(work.title)}</span><br><span class="entity-row__meta">${esc(meta)}</span></span>
+          <span class="entity-row__number">${formatNumber(work.views)}</span>
+        </button>`;
+      }).join("");
+      renderBookDetail();
+    }
+
+    function chartMarkup(rows, title) {
+      const points = sortedPoints(rows);
+      if (!points.length) return "";
+      const values = points.map(row => numeric(row.views)).filter(value => value !== null && !Number.isNaN(value));
+      if (!values.length) return "<p>Для графика нет значений просмотров.</p>";
+      const minimum = Math.min(...values), maximum = Math.max(...values), span = Math.max(1, maximum - minimum);
+      const x = index => 24 + index * (672 / Math.max(1, points.length - 1));
+      const y = value => 174 - (Number(value) - minimum) * 140 / span;
+      let marks = "";
+      for (const group of seriesGroups(points)) {
+        const coordinates = group.points.filter(row => numeric(row.views) !== null).map(row => {
+          const index = points.indexOf(row);
+          return { row, coordinate: `${x(index)},${y(row.views)}` };
+        });
+        if (coordinates.length >= 2 && !isArchiveSource(group.sourceClass)) {
+          marks += `<polyline fill="none" stroke="#2f6b4f" stroke-width="3" points="${coordinates.map(item => item.coordinate).join(" ")}"/>`;
+        }
+        marks += coordinates.map(item => {
+          const [cx, cy] = item.coordinate.split(",");
+          const fill = isArchiveSource(group.sourceClass) ? "#9a5b24" : "#171714";
+          return `<circle cx="${cx}" cy="${cy}" r="5" fill="${fill}"><title>${esc(formatDate(item.row.captured_at))}: ${formatNumber(item.row.views)} просмотров, ${esc(sourceLabel(group.sourceClass))}</title></circle>`;
+        }).join("");
+      }
+      return `<figure class="chart-wrap"><svg class="chart" viewBox="0 0 720 200" role="img" aria-label="Просмотры книги ${esc(title)} по сохранённым точкам">
+          <line x1="24" y1="174" x2="696" y2="174" stroke="#dcd8cf"/>${marks}
+        </svg><figcaption>Линия строится только внутри регулярного ряда. Архивные точки показаны отдельно охрой.</figcaption></figure>`;
+    }
+
+    function renderBookDetail() {
+      const work = state.works.find(item => String(item.work_id) === String(state.selectedWork));
+      if (!work) return;
+      const rows = sortedPoints(state.snapshots.get(String(work.work_id)) || []);
+      const current = rows.at(-1);
+      const series = comparableSeries(rows);
+      let comparison = sparseMarkup(series.points.length, rows.length > series.points.length ? "Точки разных типов источников не соединяются." : "");
+      if (series.points.length >= 2) {
+        const previous = series.points.at(-2), latest = series.points.at(-1);
+        const viewDelta = deltaValue(latest.views, previous.views);
+        comparison = `<div class="sparse-state" data-state="2+"><p>${formatNumber(series.points.length)} ${plural(series.points.length, ["сопоставимая точка", "сопоставимые точки", "сопоставимых точек"])}. ${esc(deltaLabel(viewDelta, "Последнее изменение просмотров"))}.</p>
+          <p class="formula"><strong>${formatNumber(latest.views)} − ${formatNumber(previous.views)} = ${viewDelta >= 0 ? "+" : ""}${formatNumber(viewDelta)}</strong> просмотров</p>
+          <p class="sparse-state__detail">Расчёт показывает разницу двух последних значений, но не доказывает её причину или устойчивый тренд.</p></div>`;
+      }
+      const evidenceRows = rows.map(row => `<li class="evidence-point">
+        <strong>${esc(formatDate(row.captured_at))}</strong><br>
+        ${formatNumber(row.views)} просмотров · ${formatNumber(row.likes)} лайков · ${formatNumber(row.comments)} комментариев<br>
+        ${sourceBadge(row.source_class)}
+        <details class="evidence"><summary>Технические сведения</summary><div class="evidence__body"><code>${esc(row.source_class || "unknown")}</code><br>${externalLink(row.source_url, "Открыть исходный адрес")}</div></details>
+      </li>`).join("");
+      $("#book-detail").innerHTML = `<div class="detail-head"><div><p class="eyebrow">Выбранная книга</p><h2>${esc(work.title)}</h2></div>${current ? sourceBadge(current.source_class) : ""}</div>
+        ${current ? `<div class="metrics">
+          <div class="metric"><div class="metric__label">Просмотры</div><div class="metric__value">${formatNumber(current.views)}</div></div>
+          <div class="metric"><div class="metric__label">Лайки</div><div class="metric__value">${formatNumber(current.likes)}</div></div>
+          <div class="metric"><div class="metric__label">Последняя точка</div><div class="metric__value">${esc(formatDate(current.captured_at))}</div></div>
+        </div>` : ""}
+        ${comparison}
+        <p>${externalLink(work.url, "Открыть книгу на Author.Today")}</p>
+        <details class="evidence"><summary>Показать исходные точки</summary><div class="evidence__body">
+          ${chartMarkup(rows, work.title)}<ol class="evidence-points">${evidenceRows}</ol>
+          <p><a href="#sources" data-go-section="sources">Проверить качество источников</a></p>
+        </div></details>`;
+    }
+
+    function renderRankings() {
+      const groups = rankingGroups().sort((a, b) => {
+        const left = a.rows.at(-1), right = b.rows.at(-1);
+        return Number(left.position) - Number(right.position) || collator.compare(left.title, right.title) || collator.compare(a.key, b.key);
+      });
+      if (!groups.length) {
+        $("#ranking-list").innerHTML = sparseMarkup(0, "Позиции в наблюдаемом top-25 не найдены.");
+        $("#ranking-detail").innerHTML = "<p class=\"empty-result\">Нет позиции для проверки.</p>";
+        return;
+      }
+      if (!state.selectedRank || !groups.some(group => group.key === state.selectedRank)) state.selectedRank = groups[0].key;
+      $("#ranking-list").innerHTML = groups.map(group => {
+        const latest = group.rows.at(-1);
+        return `<button type="button" class="entity-row" data-select-rank="${esc(group.key)}" aria-current="${group.key === state.selectedRank}">
+          <span><span class="entity-row__title">${esc(latest.title)}</span><br><span class="entity-row__meta">${esc(latest.category)} · ${esc(modeLabel(latest.mode))}</span></span>
+          <span class="entity-row__number">${esc(positionLabel(latest.position))}</span>
+        </button>`;
+      }).join("");
+      renderRankingDetail();
+    }
+
+    function renderRankingDetail() {
+      const group = rankingGroups().find(item => item.key === state.selectedRank);
+      if (!group) return;
+      const rows = group.rows, latest = rows.at(-1), previous = rows.at(-2);
+      let comparison = sparseMarkup(rows.length, "Одна точка показывает только наблюдаемую позицию.");
+      if (rows.length >= 2) {
+        const movement = deltaValue(previous.position, latest.position);
+        const words = movement > 0 ? `позиция стала выше на ${formatNumber(movement)}` : movement < 0 ? `позиция стала ниже на ${formatNumber(Math.abs(movement))}` : "позиция не изменилась";
+        comparison = rows.length === 2
+          ? sparseMarkup(2, `${formatDate(previous.captured_at)} → ${formatDate(latest.captured_at)}: ${words}.`)
+          : `<div class="sparse-state" data-state="2+"><p>${formatNumber(rows.length)} точек в одной категории; ${esc(words)} с прошлого снимка.</p><p class="sparse-state__detail">За пределами top-25 данных нет.</p></div>`;
+      }
+      $("#ranking-detail").innerHTML = `<div class="detail-head"><div><p class="eyebrow">${esc(latest.category)} · ${esc(modeLabel(latest.mode))}</p><h2>${esc(latest.title)}</h2></div><span class="badge badge--fact">${esc(positionLabel(latest.position))}</span></div>
+        ${comparison}
+        <details class="evidence"><summary>Показать все позиции и источник</summary><div class="evidence__body">
+          <ol class="evidence-points">${rows.map(row => `<li class="evidence-point"><strong>${esc(positionLabel(row.position))}</strong><br>${esc(formatDate(row.captured_at))}<br>${externalLink(row.ranking_url, "Открыть наблюдаемую категорию")}</li>`).join("")}</ol>
+          <p><a href="#sources" data-go-section="sources">Проверить ограничения данных</a></p>
+        </div></details>`;
+    }
+
+    function uniqueComments(rows) {
+      const seen = new Set();
+      return rows.filter(row => {
+        if (seen.has(row.comment_id)) return false;
+        seen.add(row.comment_id); return true;
+      });
+    }
+
+    function renderReaders() {
+      const comments = uniqueComments(state.comments);
+      if (!comments.length) {
+        $("#reader-state").innerHTML = sparseMarkup(0, "Нет вручную выбранных комментариев.");
+      } else if (comments.length === 1) {
+        $("#reader-state").innerHTML = sparseMarkup(1, "Одно наблюдение нельзя обобщать на всех читателей.");
+      } else if (comments.length === 2) {
+        $("#reader-state").innerHTML = `<div class="sparse-state" data-state="2+"><p>Два комментария — это ещё не мнение всех читателей.</p><p class="sparse-state__detail">Проверяйте каждое наблюдение по оригиналу.</p></div>`;
+      } else {
+        $("#reader-state").innerHTML = `<div class="sparse-state" data-state="2+"><p>${formatNumber(comments.length)} наблюдений в выбранной, но не полной выборке.</p><p class="sparse-state__detail">Количество не делает выборку репрезентативной.</p></div>`;
+      }
+      const tags = [...state.tags].sort((a, b) => Number(b.count || 0) - Number(a.count || 0) || collator.compare(a.taxonomy_path, b.taxonomy_path));
+      if (!state.selectedTag && tags.length) state.selectedTag = tags[0].taxonomy_path;
+      $("#tag-list").innerHTML = tags.map(tag => `<button type="button" class="tag-button" data-select-tag="${esc(tag.taxonomy_path)}" aria-pressed="${tag.taxonomy_path === state.selectedTag}">
+        ${esc(tag.taxonomy_path)} · ${formatNumber(tag.count)}
+      </button>`).join("");
+      let selected = state.selectedTag ? state.comments.filter(row => row.taxonomy_path === state.selectedTag) : state.comments;
+      selected = uniqueComments(selected);
+      $("#reader-list").innerHTML = selected.length ? selected.map(row => `<article class="card reader-card">
+        <div class="badges"><span class="badge">${esc(statementLabel(row.statement_type))}</span>${row.stance ? `<span class="badge badge--fact">${esc(stanceLabel(row.stance))}</span>` : ""}</div>
+        <q>${esc(row.evidence_excerpt || row.body)}</q>
+        <details class="evidence"><summary>Открыть комментарий и источник</summary><div class="evidence__body">
+          <p class="reader-card__body">${esc(row.body)}</p>
+          <p>${row.chapter_ref ? `Фрагмент: ${esc(row.chapter_ref)}` : "Книга целиком"}</p>
+          <p>${externalLink(row.source_url, "Открыть оригинал")}${row.profile_url ? ` · ${externalLink(row.profile_url, "Профиль читателя")}` : ""}</p>
+          <details class="evidence"><summary>Как отмечено наблюдение</summary><div class="evidence__body"><code>${esc(row.derivation || "не указано")}</code> · уверенность ${esc(row.confidence ?? "не указана")} · подтверждено человеком: ${row.confirmed ? "да" : "нет"}</div></details>
+        </div></details>
+      </article>`).join("") : "<div class=\"card empty-result\">Для выбранной темы комментариев нет.</div>";
+      $("#reader-profiles").innerHTML = state.profiles.length ? `<div class="source-list">${state.profiles.map(profile => `<div class="source-row"><strong>${esc(profile.display_name || "Читатель")}</strong><br>${formatNumber(profile.comment_count)} ${plural(profile.comment_count, ["комментарий", "комментария", "комментариев"])} в локальной выборке<br>${externalLink(profile.profile_url, "Открыть профиль")}</div>`).join("")}</div>` : "<p>Профили в выборке не указаны.</p>";
+      $("#reader-profiles-panel").hidden = !comments.length;
+    }
+
+    function summaryLabel(key) {
+      return ({
+        "portfolio works": "Книги со снимками", snapshots: "Снимки книг", "archive captures": "Архивные точки",
+        comments: "Комментарии в выборке", "confirmed tags": "Подтверждённые темы", hypotheses: "Сгенерированные гипотезы"
+      })[key] || key;
+    }
+
+    function qualityText(row) {
+      const source = sourceLabel(row.source_class);
+      if (row.source_class === "public_guest") return `${source}: регулярные наблюдаемые факты.`;
+      if (isArchiveSource(row.source_class)) return `${source}: нерегулярная контрольная точка.`;
+      if (String(row.source_class || "").startsWith("manual")) return `${source}: выбранное вручную свидетельство, не полная выборка.`;
+      return `${source}: происхождение сохранено.`;
+    }
+
+    function renderSources() {
+      $("#authors").innerHTML = state.authors.length ? state.authors.map(author => `<div class="source-row"><span class="badge badge--fact">Настроен</span><br><strong>${esc(author.display_name || author.author_slug)}</strong><br>${externalLink(author.profile_url, "Открыть публичный профиль")}</div>`).join("") : sparseMarkup(0, "Публичный профиль автора ещё не добавлен локальной командой.");
+      $("#coverage").innerHTML = Object.entries(state.summary).map(([key, value]) => `<div class="source-row"><span class="metric__label">${esc(summaryLabel(key))}</span><br><strong>${esc(value)}</strong></div>`).join("") || sparseMarkup(0, "Счётчики пока пусты.");
+      $("#source-quality").innerHTML = state.quality.length ? state.quality.map(row => `<div class="source-row">${sourceBadge(row.source_class)} <strong>${formatNumber(row.count)}</strong><p>${esc(qualityText(row))}</p><details class="evidence"><summary>Техническое имя</summary><div class="evidence__body"><code>${esc(row.source_class)}</code></div></details></div>`).join("") : sparseMarkup(0, "Нет описаний источников.");
+      if (!state.archives.length) {
+        $("#archives").innerHTML = sparseMarkup(0, "Архивных контрольных точек нет.");
+      } else {
+        const prefix = state.archives.length === 1 ? sparseMarkup(1, "Архивная точка не образует временной ряд.") : `<div class="sparse-state" data-state="2+"><p>${formatNumber(state.archives.length)} архивных точек. Они остаются отдельными от регулярного ряда.</p></div>`;
+        $("#archives").innerHTML = prefix + state.archives.map(row => `<div class="source-row"><strong>${esc(formatDate(row.captured_at))}</strong><br>${externalLink(row.target_url, "Целевая страница")}${row.archive_url ? ` · ${externalLink(row.archive_url, "Архивная копия")}` : ""}
+          <details class="evidence"><summary>Локатор и контрольная сумма</summary><div class="evidence__body"><code>${esc(row.source_class)}</code><pre>${esc(row.locator_json || "Локатор не указан")}</pre>${row.digest ? `<code>${esc(row.digest)}</code>` : ""}</div></details></div>`).join("");
+      }
+    }
+
+    function activateSection(name, moveFocus = true) {
+      const allowed = ["overview", "books", "rankings", "readers", "sources"];
+      const sectionName = allowed.includes(name) ? name : "overview";
+      state.activeSection = sectionName;
+      $$('[data-section]').forEach(section => { section.hidden = section.dataset.section !== sectionName; });
+      $$('[data-go-section]').forEach(link => {
+        if (link.closest("nav")) {
+          if (link.dataset.goSection === sectionName) link.setAttribute("aria-current", "page");
+          else link.removeAttribute("aria-current");
+        }
+      });
+      if (location.hash !== `#${sectionName}`) history.pushState(null, "", `#${sectionName}`);
+      if (moveFocus) {
+        const heading = $(`#${sectionName} h1`);
+        if (heading) { heading.focus({ preventScroll: true }); heading.scrollIntoView({ block: "start" }); }
+      }
+    }
+
+    function bindEvents() {
+      document.addEventListener("click", event => {
+        const workButton = event.target.closest("[data-select-work]");
+        if (workButton) {
+          state.selectedWork = String(workButton.dataset.selectWork);
+          renderBookList();
+        }
+        const rankButton = event.target.closest("[data-select-rank]");
+        if (rankButton) {
+          state.selectedRank = rankButton.dataset.selectRank;
+          renderRankings();
+        }
+        const tagButton = event.target.closest("[data-select-tag]");
+        if (tagButton) {
+          state.selectedTag = tagButton.dataset.selectTag;
+          renderReaders();
+        }
+        const sectionLink = event.target.closest("[data-go-section]");
+        if (sectionLink) {
+          event.preventDefault();
+          activateSection(sectionLink.dataset.goSection);
+        }
+      });
+      $("#book-search").addEventListener("input", renderBookList);
+      $("#book-sort").addEventListener("change", renderBookList);
+      window.addEventListener("popstate", () => activateSection(location.hash.slice(1) || "overview", false));
+    }
+
+    async function loadDashboard() {
+      bindEvents();
+      activateSection(location.hash.slice(1) || "overview", false);
+      try {
+        const [summary, works, archives, tags, authors, rankings, quality, profiles, comments] = await Promise.all([
+          "/api/summary", "/api/works", "/api/archives", "/api/tags", "/api/authors",
+          "/api/rankings", "/api/source-quality", "/api/profiles", "/api/comments"
+        ].map(getJSON));
+        Object.assign(state, { summary, works, archives, tags, authors, rankings, quality, profiles, comments });
+        const snapshots = await Promise.all(works.map(async work => [String(work.work_id), await getJSON(`/api/work/${encodeURIComponent(work.work_id)}/snapshots`)]));
+        state.snapshots = new Map(snapshots);
+        state.selectedWork = works[0] ? String(works[0].work_id) : null;
+        const displayAuthor = authors[0]?.display_name || authors[0]?.author_slug || works[0]?.author_name || "Автор";
+        $("#author-name").textContent = displayAuthor;
+        renderOverview();
+        renderBookList();
+        renderRankings();
+        renderReaders();
+        renderSources();
+        const latest = Array.from(state.snapshots.values()).flat().map(row => row.captured_at).filter(Boolean).sort().at(-1);
+        $("#sidebar-updated").textContent = latest ? `Последняя точка: ${formatDate(latest)}` : "Снимков пока нет";
+      } catch (error) {
+        $("#fatal-error").hidden = false;
+        $("#fatal-error").textContent = `Данные не загрузились. ${error.message}`;
+        $("#decision-brief").className = "";
+        $("#decision-brief").innerHTML = sparseMarkup(0, "Проверьте локальный сервер и обновите страницу.");
+      }
+    }
+
+    loadDashboard();
+  </script>
+</body>
+</html>
