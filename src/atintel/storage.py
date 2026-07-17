@@ -39,6 +39,8 @@ CREATE TABLE IF NOT EXISTS comments(
   comment_id TEXT PRIMARY KEY, work_id INTEGER, chapter_ref TEXT, profile_url TEXT,
   display_name TEXT, body TEXT NOT NULL, source_url TEXT NOT NULL,
   published_at TEXT, imported_at TEXT NOT NULL, source_id INTEGER,
+  parent_comment_id TEXT, thread_id TEXT, thread_level INTEGER,
+  statement_type TEXT, rating INTEGER,
   FOREIGN KEY(work_id) REFERENCES works(work_id), FOREIGN KEY(source_id) REFERENCES sources(source_id)
 );
 CREATE TABLE IF NOT EXISTS comment_tags(
@@ -58,7 +60,16 @@ def connect(path: str | Path) -> sqlite3.Connection:
 
 
 def init(db: sqlite3.Connection) -> None:
-    db.executescript(SCHEMA); db.commit()
+    db.executescript(SCHEMA)
+    existing = {row[1] for row in db.execute("PRAGMA table_info(comments)")}
+    migrations = {
+        "parent_comment_id": "TEXT", "thread_id": "TEXT", "thread_level": "INTEGER",
+        "statement_type": "TEXT", "rating": "INTEGER",
+    }
+    for column, kind in migrations.items():
+        if column not in existing:
+            db.execute(f"ALTER TABLE comments ADD COLUMN {column} {kind}")
+    db.commit()
 
 
 def _source(db: sqlite3.Connection, data: dict) -> int | None:
@@ -95,7 +106,13 @@ def ingest(db: sqlite3.Connection, data: dict) -> None:
         if c.get("profile_url"):
             db.execute("INSERT INTO reader_profiles(profile_url,display_name,first_seen,last_seen) VALUES(?,?,?,?) ON CONFLICT(profile_url) DO UPDATE SET display_name=excluded.display_name,last_seen=excluded.last_seen",
                        (c["profile_url"], c.get("display_name"), c.get("published_at"), c.get("published_at")))
-        cols = ["comment_id","work_id","chapter_ref","profile_url","display_name","body","source_url","published_at","imported_at","source_id"]
+        statement_type = c.get("statement_type")
+        if statement_type not in (None, "observation", "question", "praise", "criticism", "suggestion", "author_reply", "service"):
+            raise ValueError("Unsupported comment statement_type")
+        level = c.get("thread_level")
+        if level is not None and (not isinstance(level, int) or level < 0 or level > 20):
+            raise ValueError("thread_level must be an integer between 0 and 20")
+        cols = ["comment_id","work_id","chapter_ref","profile_url","display_name","body","source_url","published_at","imported_at","parent_comment_id","thread_id","thread_level","statement_type","rating","source_id"]
         db.execute(f"INSERT OR REPLACE INTO comments({','.join(cols)}) VALUES({','.join('?' for _ in cols)})", [c.get(k) for k in cols[:-1]] + [source_id])
         for t in c.get("tags", []):
             if t.get("derivation") not in ("human", "rule", "model"):
