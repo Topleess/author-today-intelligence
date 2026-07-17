@@ -6,6 +6,7 @@ from atintel.archive import commoncrawl_captures, validate_target, wayback_captu
 class ArchiveTest(unittest.TestCase):
     def test_target_allowlist(self):
         self.assertEqual(validate_target("https://author.today/work/123?utm_source=x"), "https://author.today/work/123")
+        self.assertEqual(validate_target("https://author.today/audiobook/123"), "https://author.today/audiobook/123")
         self.assertEqual(validate_target("https://author.today/u/example_reader"), "https://author.today/u/example_reader")
         rejected=(
             "http://author.today/work/1", "https://evil.example/work/1", "https://author.today/account/",

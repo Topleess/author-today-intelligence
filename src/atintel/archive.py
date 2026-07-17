@@ -6,7 +6,7 @@ from pathlib import Path
 WAYBACK_CDX = "https://web.archive.org/cdx/search/cdx"
 UA = "author-today-intelligence/0.2 (+https://github.com/Topleess/author-today-intelligence)"
 DEFAULT_CC_INDEX = "CC-MAIN-2026-25"
-WORK_PATH = re.compile(r"/work/[1-9][0-9]*")
+WORK_PATH = re.compile(r"/(?:work|audiobook)/[1-9][0-9]*")
 PROFILE_PATH = re.compile(r"/u/[A-Za-z0-9_-]{1,80}")
 WARC_PATH = re.compile(r"crawl-data/(CC-MAIN-[0-9]{4}-[0-9]{2})/segments/[A-Za-z0-9.]+/warc/[A-Za-z0-9._-]+\.warc\.gz")
 
@@ -24,7 +24,7 @@ def validate_target(url: str) -> str:
     if "%2f" in parsed.path.lower() or "%5c" in parsed.path.lower() or "*" in parsed.path:
         raise ValueError("Encoded separators and wildcards are not supported")
     if not (WORK_PATH.fullmatch(parsed.path) or PROFILE_PATH.fullmatch(parsed.path)):
-        raise ValueError("Only exact /work/<numeric-id> and /u/<slug-or-id> targets are supported")
+        raise ValueError("Only exact /work/<numeric-id>, /audiobook/<numeric-id> and /u/<slug-or-id> targets are supported")
     return urllib.parse.urlunparse(("https", "author.today", parsed.path, "", "", ""))
 
 

@@ -1,117 +1,168 @@
 # Author.Today Intelligence
 
-A local-first, evidence-first research tool for Author.Today. It collects public snapshots through the documented API, stores them in SQLite, probes Wayback/Common Crawl for historical control points, imports only user-selected private exports, and exposes a read-only local UI/API.
+Локальный прототип для автора, который отвечает на простой вопрос:
 
-> **Status:** verified tracer-bullet, not a production SaaS. It shows facts, formulas and provenance. It does not reverse-engineer rankings or invent causal explanations.
+> **Что изменилось у моих книг, где они видны в релевантных топах и на каких исходных данных основан каждый вывод?**
 
-## What works now
+![Рабочий интерфейс Сергея](docs/screenshots/sergey-evidence-ui.png)
 
-- documented Author.Today guest API collection;
-- timestamped raw JSON plus SQLite history;
-- bounded per-URL Wayback/Common Crawl probe;
-- exact Common Crawl WARC-range retrieval library with SHA-256 evidence;
-- local manual import for author-selected reports/comments;
-- drilldown: tag → evidence excerpt → full comment → profile/original URL;
-- deterministic graph/table UI at `http://127.0.0.1:8787`;
-- read-only agent API with no credential/browser/filesystem endpoints;
-- Docker restart-safe storage and tests.
+## Что это сейчас
 
-## Important private-access boundary
+Это **evidence-first технический прототип**, проверенный на публичном портфеле Сергея Насоновского. Это не готовый SaaS и не замена кабинета Author.Today.
 
-The current Author.Today public offer explicitly restricts using programs/scripts to collect information or interact with the site. Therefore this repository **does not ship automated authenticated Chrome collection**. Local execution does not override that restriction.
+На контрольном срезе 17 июля 2026 года он показывает:
 
-Private data is supported only through a file the user obtained through normal navigation and explicitly selected for local import. Passwords, cookies, OTPs, Authorization headers, browser profiles and storage state are not accepted. See [RULES_AUDIT.md](docs/RULES_AUDIT.md) and [MANUAL_IMPORT.md](docs/MANUAL_IMPORT.md).
+| Объект | Проверенный объём |
+|---|---:|
+| Публичные произведения Сергея | 24: 19 электронных и 5 аудиокниг |
+| Сопоставимые публичные снимки | 2 × 24 = 48 точек |
+| Отслеживаемые выдачи | 4 общие + 6 жанровых |
+| Ограниченный аудит Wayback | 53 снимка для 14 из 24 произведений |
+| Реальная ручная выборка комментариев | 2 комментария, 1 ветка, 1 подтверждённый тег |
 
-## Docker onboarding
+Реальная выборка комментариев хранится только локально и не публикуется в репозитории. Репозиторий содержит синтетический пример для тестов.
 
-Requirements: Docker Engine with Compose.
+## Что увидит Сергей
+
+1. **Автор и портфель.** Явно выбран профиль `https://author.today/u/nasonovsky`; показаны все 24 публичных произведения.
+2. **Динамика.** Для книги видны график, исходные значения, точное время и формула. Например: `990 524 − 990 495 = +29 просмотров`.
+3. **Релевантные топы.** Общие выдачи не смешиваются с жанровыми. Наблюдаются `Альтернативная история`, `Исторические приключения` и `Попаданцы во времени`, режимы `popular` и `trending`, окно top-25.
+4. **Комментарии как доказательства.** Путь выглядит так: `тег → наблюдение → точная цитата → полный текст → ветка → профиль → оригинал`.
+5. **Качество источника.** Регулярный публичный снимок, ручная выборка и нерегулярная архивная точка подписаны раздельно.
+
+## Что нельзя заключать
+
+- Отсутствие книги в top-25 не означает отсутствие во всём рейтинге.
+- Два снимка позволяют посчитать изменение, но ещё не сезонный тренд.
+- Архивные снимки нерегулярны и не образуют непрерывную историю.
+- Наблюдаемая выборка не является «всем рынком Author.Today».
+- Корреляция не доказывает причину.
+- UI не создаёт гипотезы автоматически: по умолчанию их количество равно нулю.
+
+## Точный состав мониторинга
+
+Действующий 14-дневный мониторинг делает публичный снимок каждые 6 часов. Статистические сутки трактуются в часовом поясе Москвы (`UTC+3`). Накопленные снимки дописываются, а не перезаписываются.
+
+### Общий сравнительный контекст
+
+- `all / popular`, первые 20 позиций;
+- `all / trending`, первые 20;
+- новые популярные книги, первые 20;
+- последние публикации, первые 20.
+
+### Жанры Сергея
+
+- `sf-history / popular`, top-25;
+- `sf-history / trending`, top-25;
+- `historical-adventure / popular`, top-25;
+- `historical-adventure / trending`, top-25;
+- `popadantsy-vo-vremeni / popular`, top-25;
+- `popadantsy-vo-vremeni / trending`, top-25.
+
+Старые общие снимки не переименовываются задним числом в жанровые. Жанровый временной ряд начинается с момента добавления этих категорий.
+
+Подробный аудит: [MONITORING_AUDIT_2026-07-17.md](docs/MONITORING_AUDIT_2026-07-17.md).
+
+## Запуск в чистом clone
+
+### Docker
 
 ```bash
 git clone https://github.com/Topleess/author-today-intelligence.git
 cd author-today-intelligence
 
-# One public snapshot: collect + ingest into the local named volume
 docker compose --profile sync run --rm public-sync
-
-# Start read-only local UI/API
 docker compose up -d controller
-```
-
-Open: <http://127.0.0.1:8787>
-
-Verify:
-
-```bash
 curl http://127.0.0.1:8787/api/health
-curl http://127.0.0.1:8787/api/summary
 ```
 
-Collect another point later:
+Откройте <http://127.0.0.1:8787>.
+
+Повторный разрешённый публичный снимок:
 
 ```bash
 docker compose --profile sync run --rm public-sync
 ```
 
-Stop without deleting data:
+Остановить, сохранив SQLite volume:
 
 ```bash
 docker compose down
 ```
 
-Delete the local database and snapshots:
+`docker compose down -v` удаляет локальные данные, поэтому используйте его только намеренно.
 
-```bash
-docker compose down -v
-```
+### Python
 
-## Python CLI
+Проект не требует сторонних runtime-зависимостей:
 
 ```bash
 python3 -m venv .venv
 . .venv/bin/activate
 pip install -e .
 
+atintel author-add https://author.today/u/nasonovsky --name "Сергей Насоновский"
 atintel bootstrap --sorting popular --output raw/popular.json --db analytics.sqlite3
-atintel archive https://author.today/work/100705 --limit 10 --output raw/archive.json
-atintel archive-ingest raw/archive.json --db analytics.sqlite3
-atintel ingest examples/manual_private_import.synthetic.json --db analytics.sqlite3
 atintel serve --db analytics.sqlite3
 ```
 
-No third-party Python runtime dependency is required.
+## Комментарии и правовая граница
 
-## Architecture
+Оферта Author.Today ограничивает использование программ и скриптов для сбора информации. Поэтому проект **не выпускает массовый или авторизованный сборщик комментариев**.
 
-```text
-Documented API ──────────────┐
-Wayback / Common Crawl ──────┼─> CLI -> local SQLite -> read-only API/UI -> agent
-User-selected manual export ─┘
+Безопасный путь:
+
+1. владелец вручную выбирает ограниченный публичный материал в обычном браузере;
+2. сохраняет локальный JSON с веткой, датой, автором, текстом и оригинальными URL;
+3. импортирует его командой `atintel ingest selected-comments.json`;
+4. вручную подтверждает цитату и тег.
+
+Пароли, cookies, OTP, Authorization-заголовки, browser profile, `localStorage` и session material отклоняются.
+
+Подробнее: [COMMENTS_EVIDENCE.ru.md](docs/COMMENTS_EVIDENCE.ru.md) и [MANUAL_IMPORT.md](docs/MANUAL_IMPORT.md).
+
+## Архивы
+
+Ограниченный аудит 24 явных URL дал покрытие `14/24` или `58,3%`. Плотность неоднородна: от 0 до 9 снимков на произведение. Поэтому массовый архивный backfill остановлен как недоказанный по полезности.
+
+Архив используется только как отдельная evidence-точка с датой, URL и locator.
+
+Подробнее: [SERGEY_ARCHIVE_AUDIT.ru.md](docs/SERGEY_ARCHIVE_AUDIT.ru.md).
+
+## Проверка
+
+```bash
+python3 -m unittest discover -s tests -v
+python3 scripts/privacy_scan.py
 ```
 
-See:
+API намеренно read-only:
 
-- [Local application](docs/LOCAL_APP.md)
-- [API contract](docs/API_CONTRACT.md)
-- [Archive evidence](docs/ARCHIVE_PROBE.md)
-- [Reader observations](docs/READER_OBSERVATIONS.md)
-- [Permission-gated browser design](docs/PERMISSION_GATED_BROWSER.md)
-- [Agent workflow](docs/AGENT_WORKFLOW.md)
-- [Data model](docs/DATA_MODEL.md)
+```bash
+curl http://127.0.0.1:8787/api/summary
+curl -i -X POST http://127.0.0.1:8787/api/summary  # ожидается HTTP 405
+```
 
-## Trust model
+## Архитектура
 
-- numbers are calculated by deterministic code;
-- raw points and source URLs remain visible;
-- one point is not a trend;
-- correlation is not causation;
-- archive captures are irregular control points, not continuous history;
-- model tags are unconfirmed until reviewed;
-- the UI reports zero generated hypotheses by default.
+```text
+Публичный разрешённый снимок ─┐
+Ручная выбранная выборка ─────┼─> local SQLite -> read-only API -> evidence-first UI
+Wayback/Common Crawl audit ───┘
+```
 
-## Agent reuse
+Нет SaaS, billing, облачного хранилища, приватного Chrome-worker или модуля защиты авторских прав.
 
-The portable skill at [`skills/author-today-intelligence/SKILL.md`](skills/author-today-intelligence/SKILL.md) instructs an agent to use documented sources first, preserve evidence, separate facts from hypotheses and avoid unsupported sales/ranking claims. The skill is optional; the local application works without an agent.
+## Документы
 
-## License
+- [Аудит мониторинга](docs/MONITORING_AUDIT_2026-07-17.md)
+- [Аудит архивов Сергея](docs/SERGEY_ARCHIVE_AUDIT.ru.md)
+- [Evidence комментариев](docs/COMMENTS_EVIDENCE.ru.md)
+- [Контракт API](docs/API_CONTRACT.md)
+- [Модель данных](docs/DATA_MODEL.md)
+- [Правовая граница](docs/RULES_AUDIT.md)
+- [PDF-обзор](docs/Author.Today-Intelligence-Sergey.ru.pdf)
 
-MIT. Author.Today, its website, API, content and trademarks belong to their respective owners. Respect current platform terms, privacy rights and rate limits.
+## Лицензия
+
+MIT. Author.Today, содержимое сайта и товарные знаки принадлежат соответствующим правообладателям. Используйте проект с учётом актуальных правил платформы, приватности и разумных лимитов запросов.

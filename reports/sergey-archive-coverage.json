@@ -1,0 +1,818 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-07-17T15:30:39Z",
+  "quality_note": "Index captures are irregular evidence points, not continuous history. This audit does not retrieve or parse every archived payload.",
+  "target_count": 24,
+  "covered_target_count": 14,
+  "coverage_ratio": 0.5833333333333334,
+  "targets": [
+    {
+      "work_id": 614116,
+      "title": "Абиссинец 1889. Том 3",
+      "url": "https://author.today/work/614116",
+      "wayback": [],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 0,
+      "first_capture": null,
+      "last_capture": null
+    },
+    {
+      "work_id": 605707,
+      "title": "Казачонок 1862. Том 10",
+      "url": "https://author.today/work/605707",
+      "wayback": [
+        {
+          "timestamp": "20260713084803",
+          "original": "https://author.today/work/605707",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "6LO6YUOYBTD3C4YRTUER57LYQ4QWREAJ",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F605707&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260713084803id_/https://author.today/work/605707"
+        }
+      ],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 1,
+      "first_capture": "20260713084803",
+      "last_capture": "20260713084803"
+    },
+    {
+      "work_id": 599100,
+      "title": "Абиссинец 1889. Том 2",
+      "url": "https://author.today/work/599100",
+      "wayback": [],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 0,
+      "first_capture": null,
+      "last_capture": null
+    },
+    {
+      "work_id": 563328,
+      "title": "Абиссинец 1889. Том 1",
+      "url": "https://author.today/work/563328",
+      "wayback": [],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 0,
+      "first_capture": null,
+      "last_capture": null
+    },
+    {
+      "work_id": 582761,
+      "title": "Казачонок 1862. Том 9",
+      "url": "https://author.today/work/582761",
+      "wayback": [],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 0,
+      "first_capture": null,
+      "last_capture": null
+    },
+    {
+      "work_id": 574469,
+      "title": "Казачонок 1861. Том 8",
+      "url": "https://author.today/work/574469",
+      "wayback": [
+        {
+          "timestamp": "20260409113828",
+          "original": "https://author.today/work/574469",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "FC7B2WDJTG5OMNOHJGSYLDQHFJ77EFJB",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F574469&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260409113828id_/https://author.today/work/574469"
+        },
+        {
+          "timestamp": "20260430120833",
+          "original": "https://author.today/work/574469",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "BKOT3KKWIPHLAUJ2XSF6EZNM3NQUJ57L",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F574469&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260430120833id_/https://author.today/work/574469"
+        }
+      ],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 2,
+      "first_capture": "20260409113828",
+      "last_capture": "20260430120833"
+    },
+    {
+      "work_id": 565322,
+      "title": "Казачонок 1861. Том 7",
+      "url": "https://author.today/work/565322",
+      "wayback": [],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 0,
+      "first_capture": null,
+      "last_capture": null
+    },
+    {
+      "work_id": 575091,
+      "title": "Казачонок 1861. Том 5. АУДИО",
+      "url": "https://author.today/audiobook/575091",
+      "wayback": [],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 0,
+      "first_capture": null,
+      "last_capture": null
+    },
+    {
+      "work_id": 558844,
+      "title": "Казачонок 1861. Том 6",
+      "url": "https://author.today/work/558844",
+      "wayback": [
+        {
+          "timestamp": "20260311155533",
+          "original": "https://author.today/work/558844",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "NZUXVIOJKAZ4P7I2PQVQ75LSJVO27BET",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F558844&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260311155533id_/https://author.today/work/558844"
+        }
+      ],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 1,
+      "first_capture": "20260311155533",
+      "last_capture": "20260311155533"
+    },
+    {
+      "work_id": 548956,
+      "title": "Казачонок 1861. Том 5",
+      "url": "https://author.today/work/548956",
+      "wayback": [],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 0,
+      "first_capture": null,
+      "last_capture": null
+    },
+    {
+      "work_id": 561953,
+      "title": "Казачонок 1861. Том 4. АУДИО",
+      "url": "https://author.today/audiobook/561953",
+      "wayback": [],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 0,
+      "first_capture": null,
+      "last_capture": null
+    },
+    {
+      "work_id": 538292,
+      "title": "Казачонок 1861. Том 4",
+      "url": "https://author.today/work/538292",
+      "wayback": [
+        {
+          "timestamp": "20260203023357",
+          "original": "https://author.today/work/538292",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "W6ZVVIYFNW272CPRHGZEL7FZMXHW5ABZ",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F538292&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260203023357id_/https://author.today/work/538292"
+        },
+        {
+          "timestamp": "20260214180916",
+          "original": "https://author.today/work/538292",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "HTWJQJOUV3MN7MSAFTYJHH34XXWWS32O",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F538292&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260214180916id_/https://author.today/work/538292"
+        },
+        {
+          "timestamp": "20260517052656",
+          "original": "https://author.today/work/538292",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "5I2WHIUUCTPUM33EKM2NUNDMN4SBGG52",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F538292&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260517052656id_/https://author.today/work/538292"
+        }
+      ],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 3,
+      "first_capture": "20260203023357",
+      "last_capture": "20260517052656"
+    },
+    {
+      "work_id": 552303,
+      "title": "Казачонок 1860. Том 3. АУДИО",
+      "url": "https://author.today/audiobook/552303",
+      "wayback": [],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 0,
+      "first_capture": null,
+      "last_capture": null
+    },
+    {
+      "work_id": 522560,
+      "title": "Казачонок 1860. Том 3",
+      "url": "https://author.today/work/522560",
+      "wayback": [
+        {
+          "timestamp": "20260128105515",
+          "original": "https://author.today/work/522560",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "LKLI3NG7X7VOSBOX5FSSROGBAFMXHMXW",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F522560&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260128105515id_/https://author.today/work/522560"
+        },
+        {
+          "timestamp": "20260216121306",
+          "original": "https://author.today/work/522560",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "UQ4XXHKXKAUTUE4DGPCFCWIOJ4CYALQ7",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F522560&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260216121306id_/https://author.today/work/522560"
+        },
+        {
+          "timestamp": "20260303054506",
+          "original": "https://author.today/work/522560",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "EMKKAH3Z4ATAQUEXR2M37M2YGG6CTF5H",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F522560&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260303054506id_/https://author.today/work/522560"
+        }
+      ],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 3,
+      "first_capture": "20260128105515",
+      "last_capture": "20260303054506"
+    },
+    {
+      "work_id": 514387,
+      "title": "Казачонок 1860. Том 2",
+      "url": "https://author.today/work/514387",
+      "wayback": [
+        {
+          "timestamp": "20251221085359",
+          "original": "https://author.today/work/514387",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "F3PBSFZOGLLYJEMB4MYTEUBMJ56KUPHP",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F514387&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20251221085359id_/https://author.today/work/514387"
+        },
+        {
+          "timestamp": "20260101162414",
+          "original": "https://author.today/work/514387",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "AENSO64TTHAGLD6EWLLCPW5JWRUAU5KI",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F514387&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260101162414id_/https://author.today/work/514387"
+        },
+        {
+          "timestamp": "20260224225209",
+          "original": "https://author.today/work/514387",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "MSNFOBOCKQRAOTWOSBESER6TV6NQXE3Y",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F514387&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260224225209id_/https://author.today/work/514387"
+        }
+      ],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 3,
+      "first_capture": "20251221085359",
+      "last_capture": "20260224225209"
+    },
+    {
+      "work_id": 509323,
+      "title": "Казачонок 1860. Том 1",
+      "url": "https://author.today/work/509323",
+      "wayback": [
+        {
+          "timestamp": "20251210233929",
+          "original": "https://author.today/work/509323",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "PBX7HH77T5OVXXTFWGO2DXHBBS5CTBNX",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F509323&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20251210233929id_/https://author.today/work/509323"
+        },
+        {
+          "timestamp": "20251220165026",
+          "original": "https://author.today/work/509323",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "JGIML2YHSSN272TN7FS3ETRSGWO5RANO",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F509323&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20251220165026id_/https://author.today/work/509323"
+        },
+        {
+          "timestamp": "20260116211903",
+          "original": "https://author.today/work/509323",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "LI6V2WW72LVLN5J3S7YIHMASNQKYCN2N",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F509323&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260116211903id_/https://author.today/work/509323"
+        },
+        {
+          "timestamp": "20260224225210",
+          "original": "https://author.today/work/509323",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "RXHTFIVUJ27W4HKWMO4PSIIQEZSGFCCE",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F509323&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260224225210id_/https://author.today/work/509323"
+        },
+        {
+          "timestamp": "20260225120112",
+          "original": "https://author.today/work/509323",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "MXBLKLKM3WSXCV4JPFF5QF6RJ3TOYI4Q",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F509323&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260225120112id_/https://author.today/work/509323"
+        },
+        {
+          "timestamp": "20260409113829",
+          "original": "https://author.today/work/509323",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "JWA6BLPIBQFNVJ7NSLBFO4HW64FESVY7",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F509323&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260409113829id_/https://author.today/work/509323"
+        },
+        {
+          "timestamp": "20260414175601",
+          "original": "https://author.today/work/509323",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "X7IJDXPBFSFCG4IQRDEQA5IILHNZWSIS",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F509323&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260414175601id_/https://author.today/work/509323"
+        },
+        {
+          "timestamp": "20260430120834",
+          "original": "https://author.today/work/509323",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "AOOHIDFMJX5446UU7YOSXW75KEDJKCSV",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F509323&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260430120834id_/https://author.today/work/509323"
+        },
+        {
+          "timestamp": "20260713084804",
+          "original": "https://author.today/work/509323",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "44JKFITLEBPB34VMSDN4ONSU2T4CQDIZ",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F509323&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260713084804id_/https://author.today/work/509323"
+        }
+      ],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 9,
+      "first_capture": "20251210233929",
+      "last_capture": "20260713084804"
+    },
+    {
+      "work_id": 536436,
+      "title": "Казачонок 1860. Том 2. АУДИО",
+      "url": "https://author.today/audiobook/536436",
+      "wayback": [
+        {
+          "timestamp": "20260209234202",
+          "original": "https://author.today/audiobook/536436",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "NS4MK6IVMVH2MNQVU357JSRB4QA2KDCV",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Faudiobook%2F536436&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260209234202id_/https://author.today/audiobook/536436"
+        },
+        {
+          "timestamp": "20260226044310",
+          "original": "https://author.today/audiobook/536436",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "DCC7Y47GJROEUBIZ4AXAANGECU5EV7PJ",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Faudiobook%2F536436&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260226044310id_/https://author.today/audiobook/536436"
+        }
+      ],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 2,
+      "first_capture": "20260209234202",
+      "last_capture": "20260226044310"
+    },
+    {
+      "work_id": 522888,
+      "title": "Казачонок 1860. Том 1. АУДИО",
+      "url": "https://author.today/audiobook/522888",
+      "wayback": [
+        {
+          "timestamp": "20260225135017",
+          "original": "https://author.today/audiobook/522888",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "IVAQOYVXEA2IWVCZCZDJ6YNYGFRP2EWD",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Faudiobook%2F522888&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260225135017id_/https://author.today/audiobook/522888"
+        },
+        {
+          "timestamp": "20260226044312",
+          "original": "https://author.today/audiobook/522888",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "VMGI33KP74SLA5FP37EX6BG46GQHMDXY",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Faudiobook%2F522888&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260226044312id_/https://author.today/audiobook/522888"
+        }
+      ],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 2,
+      "first_capture": "20260225135017",
+      "last_capture": "20260226044312"
+    },
+    {
+      "work_id": 499486,
+      "title": "Одинаковые. Том 6. Революция",
+      "url": "https://author.today/work/499486",
+      "wayback": [],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 0,
+      "first_capture": null,
+      "last_capture": null
+    },
+    {
+      "work_id": 492480,
+      "title": "Одинаковые. Том 5. Атлантида",
+      "url": "https://author.today/work/492480",
+      "wayback": [
+        {
+          "timestamp": "20251001134007",
+          "original": "https://author.today/work/492480",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "S25FMB5WDQEFWRPCPZLPM6OJ7MUP6774",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F492480&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20251001134007id_/https://author.today/work/492480"
+        },
+        {
+          "timestamp": "20260220062509",
+          "original": "https://author.today/work/492480",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "DPT2K4T6MJM4PWAGWLRKHBIWXX7RGPLF",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F492480&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260220062509id_/https://author.today/work/492480"
+        }
+      ],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 2,
+      "first_capture": "20251001134007",
+      "last_capture": "20260220062509"
+    },
+    {
+      "work_id": 484909,
+      "title": "Одинаковые. Том 4. Претория",
+      "url": "https://author.today/work/484909",
+      "wayback": [
+        {
+          "timestamp": "20250905080655",
+          "original": "https://author.today/work/484909",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "6BMOGL5R6KEYGHENJI6RMODE4MZJUPEQ",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F484909&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20250905080655id_/https://author.today/work/484909"
+        },
+        {
+          "timestamp": "20250905144422",
+          "original": "https://author.today/work/484909",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "7CBC2WEXOBG5SMGHQJOHPNYCOVNX4EOW",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F484909&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20250905144422id_/https://author.today/work/484909"
+        },
+        {
+          "timestamp": "20250908235919",
+          "original": "https://author.today/work/484909",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "HDWRPSHENF63YKC4D4VKRH6WKCOUUW2R",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F484909&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20250908235919id_/https://author.today/work/484909"
+        },
+        {
+          "timestamp": "20250916082756",
+          "original": "https://author.today/work/484909",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "CCGUM752DVMPAFMBPRBIFVC6NTXCWI6F",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F484909&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20250916082756id_/https://author.today/work/484909"
+        },
+        {
+          "timestamp": "20251001152942",
+          "original": "https://author.today/work/484909",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "X74SFGDTHIPH6FP2BF5X3F4JJMLSNVKU",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F484909&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20251001152942id_/https://author.today/work/484909"
+        },
+        {
+          "timestamp": "20260204095532",
+          "original": "https://author.today/work/484909",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "UMMPKSOVPIOMZHM7354247K3EMUDZ67L",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F484909&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260204095532id_/https://author.today/work/484909"
+        }
+      ],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 6,
+      "first_capture": "20250905080655",
+      "last_capture": "20260204095532"
+    },
+    {
+      "work_id": 477913,
+      "title": "Одинаковые. Том 3. Индокитай",
+      "url": "https://author.today/work/477913",
+      "wayback": [
+        {
+          "timestamp": "20250824012913",
+          "original": "https://author.today/work/477913",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "5N7MBU3TZIM627I6WJCPKV3QYUAO4PWI",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F477913&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20250824012913id_/https://author.today/work/477913"
+        },
+        {
+          "timestamp": "20250916035441",
+          "original": "https://author.today/work/477913",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "7MH2LWH4QCLFFBFMLR5F3FTMGGYN4OCM",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F477913&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20250916035441id_/https://author.today/work/477913"
+        },
+        {
+          "timestamp": "20251001144847",
+          "original": "https://author.today/work/477913",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "NWAVFWHV3KX6PEQOO7M742SQ2HKRB4UU",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F477913&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20251001144847id_/https://author.today/work/477913"
+        },
+        {
+          "timestamp": "20251122012840",
+          "original": "https://author.today/work/477913",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "T7RXSYTH6SGCJKMOXYE7DSXHVB3W7TS7",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F477913&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20251122012840id_/https://author.today/work/477913"
+        },
+        {
+          "timestamp": "20260306112758",
+          "original": "https://author.today/work/477913",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "H2FSRQFMRZLD257PKE5SZQEJIW5PDZ3F",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F477913&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260306112758id_/https://author.today/work/477913"
+        }
+      ],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 5,
+      "first_capture": "20250824012913",
+      "last_capture": "20260306112758"
+    },
+    {
+      "work_id": 471800,
+      "title": "Одинаковые. Том 2. Гимназисты",
+      "url": "https://author.today/work/471800",
+      "wayback": [
+        {
+          "timestamp": "20250728182429",
+          "original": "https://author.today/work/471800",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "EUGPO7UWNCSE3SNBGDVTJRSOFFFIYI6V",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F471800&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20250728182429id_/https://author.today/work/471800"
+        },
+        {
+          "timestamp": "20250729124146",
+          "original": "https://author.today/work/471800",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "62ZANKPMLOK52ZX6VPE47FNQDEDAABQE",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F471800&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20250729124146id_/https://author.today/work/471800"
+        },
+        {
+          "timestamp": "20250729124439",
+          "original": "https://author.today/work/471800",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "3RANB5WGU47BOZJKR5A2ORZG3SHYTVS7",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F471800&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20250729124439id_/https://author.today/work/471800"
+        },
+        {
+          "timestamp": "20251001125857",
+          "original": "https://author.today/work/471800",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "54MFWZTGRWNOL6YVI464VP23OYKXYISX",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F471800&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20251001125857id_/https://author.today/work/471800"
+        },
+        {
+          "timestamp": "20260520111430",
+          "original": "https://author.today/work/471800",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "SJALPSV4PUJW5VQWGTYVHBE5YML4BKWF",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F471800&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260520111430id_/https://author.today/work/471800"
+        }
+      ],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 5,
+      "first_capture": "20250728182429",
+      "last_capture": "20260520111430"
+    },
+    {
+      "work_id": 465624,
+      "title": "Одинаковые. Том 1. Адаптация",
+      "url": "https://author.today/work/465624",
+      "wayback": [
+        {
+          "timestamp": "20250725185753",
+          "original": "https://author.today/work/465624",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "MHWV62NIHAFXYU7O2F7JOB3YJBHYUMGO",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F465624&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20250725185753id_/https://author.today/work/465624"
+        },
+        {
+          "timestamp": "20250913025616",
+          "original": "https://author.today/work/465624",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "COW5XZRYJNS6BEZZ5ZLPGSEWSI6QCT2G",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F465624&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20250913025616id_/https://author.today/work/465624"
+        },
+        {
+          "timestamp": "20251015081316",
+          "original": "https://author.today/work/465624",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "DIJJSYIKI2A6UBKLLZRB47YRW3X4PYL6",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F465624&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20251015081316id_/https://author.today/work/465624"
+        },
+        {
+          "timestamp": "20251207142931",
+          "original": "https://author.today/work/465624",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "IPVVWFQ3P52JHQ5GCAQWCSEHWCQJND2D",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F465624&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20251207142931id_/https://author.today/work/465624"
+        },
+        {
+          "timestamp": "20260131053259",
+          "original": "https://author.today/work/465624",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "X3ZLZP2DF3SPI3VXHLQGKE3QF55I72QA",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F465624&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260131053259id_/https://author.today/work/465624"
+        },
+        {
+          "timestamp": "20260204095543",
+          "original": "https://author.today/work/465624",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "KYHTVWAGRAN5RBUIAMDAFG7NIVHAWA2H",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F465624&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260204095543id_/https://author.today/work/465624"
+        },
+        {
+          "timestamp": "20260306112759",
+          "original": "https://author.today/work/465624",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "COKDLM7KGR4U4MQIV3JFZSNENM3NCMR3",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F465624&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260306112759id_/https://author.today/work/465624"
+        },
+        {
+          "timestamp": "20260321133716",
+          "original": "https://author.today/work/465624",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "NVXW23SO5CS66U6VXTNYNXJ3H2YXFZTA",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F465624&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260321133716id_/https://author.today/work/465624"
+        },
+        {
+          "timestamp": "20260629012232",
+          "original": "https://author.today/work/465624",
+          "statuscode": "200",
+          "mimetype": "text/html",
+          "digest": "4FCE6NWFX6Y7HVDTRJ4ATJZQUFW4WJES",
+          "source_class": "wayback_capture",
+          "query_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fauthor.today%2Fwork%2F465624&matchType=exact&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&limit=25&collapse=digest",
+          "archive_url": "https://web.archive.org/web/20260629012232id_/https://author.today/work/465624"
+        }
+      ],
+      "commoncrawl": [],
+      "errors": [],
+      "capture_count": 9,
+      "first_capture": "20250725185753",
+      "last_capture": "20260629012232"
+    }
+  ]
+}
