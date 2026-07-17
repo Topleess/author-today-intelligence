@@ -13,6 +13,10 @@ CREATE TABLE IF NOT EXISTS sources(
   captured_at TEXT NOT NULL, digest TEXT, metadata_json TEXT NOT NULL DEFAULT '{}',
   UNIQUE(source_class, source_url, captured_at)
 );
+CREATE TABLE IF NOT EXISTS author_targets(
+  author_slug TEXT PRIMARY KEY, profile_url TEXT NOT NULL UNIQUE,
+  display_name TEXT, added_at TEXT NOT NULL
+);
 CREATE TABLE IF NOT EXISTS work_snapshots(
   id INTEGER PRIMARY KEY, captured_at TEXT NOT NULL, work_id INTEGER NOT NULL,
   views INTEGER, likes INTEGER, comments INTEGER, reviews INTEGER,
@@ -141,6 +145,25 @@ def ingest_archive_probe(db: sqlite3.Connection, path: str | Path) -> int:
                        (target, c["source_class"], captured, c.get("archive_url"), c.get("digest"), json.dumps(c, ensure_ascii=False)))
             count += db.execute("SELECT changes()").fetchone()[0]
     db.commit(); return count
+
+
+def add_author_target(db: sqlite3.Connection, profile_url: str, display_name: str | None = None, added_at: str | None = None) -> str:
+    from datetime import datetime, timezone
+    from urllib.parse import urlparse
+    import re
+    init(db)
+    parsed = urlparse(profile_url.strip())
+    if parsed.scheme != "https" or parsed.netloc.lower() != "author.today":
+        raise ValueError("Author URL must use https://author.today")
+    match = re.fullmatch(r"/u/([A-Za-z0-9_.-]+)/?", parsed.path)
+    if not match or parsed.query or parsed.fragment:
+        raise ValueError("Expected an Author.Today profile URL like https://author.today/u/name")
+    slug = match.group(1)
+    canonical = f"https://author.today/u/{slug}"
+    timestamp = added_at or datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    db.execute("INSERT INTO author_targets(author_slug,profile_url,display_name,added_at) VALUES(?,?,?,?) ON CONFLICT(author_slug) DO UPDATE SET profile_url=excluded.profile_url,display_name=COALESCE(excluded.display_name,author_targets.display_name)",
+               (slug, canonical, display_name, timestamp))
+    db.commit(); return slug
 
 
 def latest_report(db: sqlite3.Connection) -> str:

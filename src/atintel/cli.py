@@ -3,7 +3,7 @@ import argparse
 from .api import collect_catalog
 from .archive import probe
 from .server import serve
-from .storage import connect, init, ingest_archive_probe, ingest_file, latest_report
+from .storage import add_author_target, connect, init, ingest_archive_probe, ingest_file, latest_report
 
 
 def main() -> None:
@@ -25,6 +25,8 @@ def main() -> None:
     report.add_argument("--db", default="analytics.sqlite3")
     server = sub.add_parser("serve", help="Run local read-only evidence UI/API")
     server.add_argument("--db", default="analytics.sqlite3"); server.add_argument("--host", default="127.0.0.1"); server.add_argument("--port", type=int, default=8787)
+    author = sub.add_parser("author-add", help="Add an explicit public author profile target locally")
+    author.add_argument("profile_url"); author.add_argument("--name"); author.add_argument("--db", default="analytics.sqlite3")
     args = parser.parse_args()
     if args.command == "collect": print(collect_catalog(args.output, sorting=args.sorting))
     elif args.command == "bootstrap":
@@ -36,6 +38,7 @@ def main() -> None:
     elif args.command == "archive": print(probe(args.url,args.output,args.limit))
     elif args.command == "archive-ingest":
         db=connect(args.db); print(ingest_archive_probe(db,args.probe))
+    elif args.command == "author-add": print(add_author_target(connect(args.db),args.profile_url,args.name))
     elif args.command == "serve": serve(args.db,args.host,args.port)
     else:
         db=connect(args.db); print(latest_report(db))

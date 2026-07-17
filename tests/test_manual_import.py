@@ -1,8 +1,15 @@
 import json, tempfile, unittest
 from pathlib import Path
-from atintel.storage import connect, ingest_file
+from atintel.storage import add_author_target, connect, ingest_file
 
 class ManualImportTest(unittest.TestCase):
+    def test_add_author_target_validates_and_canonicalizes(self):
+        with tempfile.TemporaryDirectory() as d:
+            db=connect(Path(d)/"x.sqlite3")
+            self.assertEqual(add_author_target(db,"https://author.today/u/nasonovsky/","Сергей","2026-07-17T00:00:00Z"),"nasonovsky")
+            self.assertEqual(tuple(db.execute("SELECT author_slug,profile_url,display_name FROM author_targets").fetchone()),("nasonovsky","https://author.today/u/nasonovsky","Сергей"))
+            with self.assertRaises(ValueError): add_author_target(db,"https://evil.example/u/nasonovsky")
+
     def test_comment_evidence_chain(self):
         with tempfile.TemporaryDirectory() as d:
             db=connect(Path(d)/"x.sqlite3")
