@@ -1,0 +1,664 @@
+{
+  "schema_version": 1,
+  "quality_note": "Archived metrics are sparse control points. They must not be treated as a continuous time series.",
+  "capture_count": 53,
+  "usable_capture_count": 14,
+  "captures": [
+    {
+      "work_id": 605707,
+      "work_title": "Казачонок 1862. Том 10",
+      "timestamp": "20260713084803",
+      "original": "https://author.today/work/605707",
+      "archive_url": "https://web.archive.org/web/20260713084803id_/https://author.today/work/605707",
+      "status": 200,
+      "decoded_bytes": 75680,
+      "compressed_sha256": "87710278b016421caf1015aca3456961676225f050dacea0dc1c2c0f42ca9ac5",
+      "decoded_sha256": "91e1e37a3683aea585b98fbf147c104873b6e77108ae855a7d72b7d03f706dde",
+      "title": "Казачонок 1862. Том 10 - Сергей Насоновский, Анджей Б. - читать книгу в онлайн-библиотеке / Опубликовано: 19 июн. 2026 в 21:13",
+      "metrics": {
+        "views": 98588,
+        "likes": 747,
+        "comments": null,
+        "reviews": 0
+      },
+      "metric_count": 3
+    },
+    {
+      "work_id": 574469,
+      "work_title": "Казачонок 1861. Том 8",
+      "timestamp": "20260409113828",
+      "original": "https://author.today/work/574469",
+      "archive_url": "https://web.archive.org/web/20260409113828id_/https://author.today/work/574469",
+      "status": 200,
+      "decoded_bytes": 70709,
+      "compressed_sha256": "f68c834784d6f9cbcd89e03c3fe5a09581d7adfb1544ba30673fdb096573ebcf",
+      "decoded_sha256": "4cfb8d2e61aa675ef089d98a8d4848755ea81338099176a79526a56a9e0fee38",
+      "title": "Казачонок 1861. Том 8 - Сергей Насоновский, Анджей Б. - читать книгу в онлайн-библиотеке / Опубликовано: 8 апр. 2026 в 21:06",
+      "metrics": {
+        "views": 3942,
+        "likes": 360,
+        "comments": null,
+        "reviews": 0
+      },
+      "metric_count": 3
+    },
+    {
+      "work_id": 574469,
+      "work_title": "Казачонок 1861. Том 8",
+      "timestamp": "20260430120833",
+      "archive_url": "https://web.archive.org/web/20260430120833id_/https://author.today/work/574469",
+      "error": {
+        "type": "HTTPError",
+        "message": "HTTP Error 500: INTERNAL SERVER ERROR"
+      }
+    },
+    {
+      "work_id": 558844,
+      "work_title": "Казачонок 1861. Том 6",
+      "timestamp": "20260311155533",
+      "original": "https://author.today/work/558844",
+      "archive_url": "https://web.archive.org/web/20260311155533id_/https://author.today/work/558844",
+      "status": 200,
+      "decoded_bytes": 74716,
+      "compressed_sha256": "b3870df4c99e76d917796aa637cdb930250f9f5f34e8ea1f0f8f7b1ee70c4310",
+      "decoded_sha256": "aa0d1f6e24419ee1c241eaf8e4c1afb8c09076a01e7f3ab438abcf0c0bb797f2",
+      "title": "Казачонок 1861. Том 6 - Сергей Насоновский, Петр Алмазный - читать книгу в онлайн-библиотеке / Опубликовано: 3 мар. 2026 в 21:04",
+      "metrics": {
+        "views": 96912,
+        "likes": 1221,
+        "comments": null,
+        "reviews": 1
+      },
+      "metric_count": 3
+    },
+    {
+      "work_id": 538292,
+      "work_title": "Казачонок 1861. Том 4",
+      "timestamp": "20260203023357",
+      "original": "https://author.today/work/538292",
+      "archive_url": "https://web.archive.org/web/20260203023357id_/https://author.today/work/538292",
+      "status": 200,
+      "decoded_bytes": 75023,
+      "compressed_sha256": "8dd481cd8e52729d16ab576350d048b6130d3d371c994cd79240382dd28912d2",
+      "decoded_sha256": "28b2cc1ff231b3610b99eecca087a4b3e3ce49e66af5ac6e6497d7921c696a4b",
+      "title": "Казачонок 1861. Том 4 - Сергей Насоновский, Петр Алмазный - читать книгу в онлайн-библиотеке / Опубликовано: 25 янв. 2026 в 21:06",
+      "metrics": {
+        "views": 103919,
+        "likes": 1185,
+        "comments": null,
+        "reviews": 0
+      },
+      "metric_count": 3
+    },
+    {
+      "work_id": 538292,
+      "work_title": "Казачонок 1861. Том 4",
+      "timestamp": "20260214180916",
+      "archive_url": "https://web.archive.org/web/20260214180916id_/https://author.today/work/538292",
+      "error": {
+        "type": "HTTPError",
+        "message": "HTTP Error 500: INTERNAL SERVER ERROR"
+      }
+    },
+    {
+      "work_id": 538292,
+      "work_title": "Казачонок 1861. Том 4",
+      "timestamp": "20260517052656",
+      "original": "https://author.today/work/538292",
+      "archive_url": "https://web.archive.org/web/20260517052656id_/https://author.today/work/538292",
+      "status": 200,
+      "decoded_bytes": 78809,
+      "compressed_sha256": "ea17d1c0a309f187cb9983b576b261fb3ab94b9958949e5081c7e466d59b7455",
+      "decoded_sha256": "ea17d1c0a309f187cb9983b576b261fb3ab94b9958949e5081c7e466d59b7455",
+      "title": "Казачонок 1861. Том 4 - Сергей Насоновский, Петр Алмазный - читать книгу в онлайн-библиотеке / Опубликовано: 25 янв. 2026 в 21:06",
+      "metrics": {
+        "views": 369483,
+        "likes": 2204,
+        "comments": null,
+        "reviews": 2
+      },
+      "metric_count": 3
+    },
+    {
+      "work_id": 522560,
+      "work_title": "Казачонок 1860. Том 3",
+      "timestamp": "20260128105515",
+      "original": "https://author.today/work/522560",
+      "archive_url": "https://web.archive.org/web/20260128105515id_/https://author.today/work/522560",
+      "status": 200,
+      "decoded_bytes": 82202,
+      "compressed_sha256": "7b1f060e42e123618dd65121d7990b08fbf1e1fb2a1413b25835f9c19419fefc",
+      "decoded_sha256": "1ee6c0bb7b23d5e657caa2980f00b871bf20a9019caa77baa5000c0198cb8559",
+      "title": "Казачонок 1860. Том 3 - Сергей Насоновский, Петр Алмазный - читать книгу в онлайн-библиотеке / Опубликовано: 5 янв. 2026 в 21:09",
+      "metrics": {
+        "views": 250622,
+        "likes": 1771,
+        "comments": null,
+        "reviews": 1
+      },
+      "metric_count": 3
+    },
+    {
+      "work_id": 522560,
+      "work_title": "Казачонок 1860. Том 3",
+      "timestamp": "20260216121306",
+      "original": "https://author.today/work/522560",
+      "archive_url": "https://web.archive.org/web/20260216121306id_/https://author.today/work/522560",
+      "status": 200,
+      "decoded_bytes": 82447,
+      "compressed_sha256": "a5914692ee0d2df3561bbbfd222c8e5051d4a60197d010aa526b6ed6b54e7e6a",
+      "decoded_sha256": "eaf6bd768a6466e66910df6c4a9549219e20869ef9d99273f31bcac653b8c2f6",
+      "title": "Казачонок 1860. Том 3 - Сергей Насоновский, Петр Алмазный - читать книгу в онлайн-библиотеке / Опубликовано: 5 янв. 2026 в 21:09",
+      "metrics": {
+        "views": 274765,
+        "likes": 1982,
+        "comments": null,
+        "reviews": 1
+      },
+      "metric_count": 3
+    },
+    {
+      "work_id": 522560,
+      "work_title": "Казачонок 1860. Том 3",
+      "timestamp": "20260303054506",
+      "archive_url": "https://web.archive.org/web/20260303054506id_/https://author.today/work/522560",
+      "error": {
+        "type": "HTTPError",
+        "message": "HTTP Error 500: INTERNAL SERVER ERROR"
+      }
+    },
+    {
+      "work_id": 514387,
+      "work_title": "Казачонок 1860. Том 2",
+      "timestamp": "20251221085359",
+      "original": "https://author.today/work/514387",
+      "archive_url": "https://web.archive.org/web/20251221085359id_/https://author.today/work/514387",
+      "status": 200,
+      "decoded_bytes": 77382,
+      "compressed_sha256": "969c60a062c91a8e4811a5a25af02518a86be8d4ee609fa56f7f89a6099c147f",
+      "decoded_sha256": "969c60a062c91a8e4811a5a25af02518a86be8d4ee609fa56f7f89a6099c147f",
+      "title": "Казачонок 1860. Том 2 - Сергей Насоновский, Петр Алмазный - читать книгу в онлайн-библиотеке / Опубликовано: 16 дек. 2025 в 21:02",
+      "metrics": {
+        "views": 78221,
+        "likes": 1024,
+        "comments": null,
+        "reviews": 0
+      },
+      "metric_count": 3
+    },
+    {
+      "work_id": 514387,
+      "work_title": "Казачонок 1860. Том 2",
+      "timestamp": "20260101162414",
+      "original": "https://author.today/work/514387",
+      "archive_url": "https://web.archive.org/web/20260101162414id_/https://author.today/work/514387",
+      "status": 200,
+      "decoded_bytes": 83842,
+      "compressed_sha256": "d379ec83fb94b9ae51b2471bec43553aaee625baea7fe5aaf620ea1112b0b269",
+      "decoded_sha256": "c06055f2975753907ca8597a003cd7ec1d24469bebd90a9607441b77144ba51d",
+      "title": "Казачонок 1860. Том 2 - Сергей Насоновский, Петр Алмазный - читать книгу в онлайн-библиотеке / Опубликовано: 16 дек. 2025 в 21:02",
+      "metrics": {
+        "views": 232028,
+        "likes": 1570,
+        "comments": null,
+        "reviews": 0
+      },
+      "metric_count": 3
+    },
+    {
+      "work_id": 514387,
+      "work_title": "Казачонок 1860. Том 2",
+      "timestamp": "20260224225209",
+      "original": "https://author.today/work/514387",
+      "archive_url": "https://web.archive.org/web/20260224225209id_/https://author.today/work/514387",
+      "status": 200,
+      "decoded_bytes": 86716,
+      "compressed_sha256": "57b3845c17a12b3823867ebc23b8b7284987d370e3a93fb77d647b7808cbf37e",
+      "decoded_sha256": "382465fe5f938af7a791caab8c895a9d2bbc208f315877c4f0a7d3490753632e",
+      "title": "Казачонок 1860. Том 2 - Сергей Насоновский, Петр Алмазный - читать книгу в онлайн-библиотеке / Опубликовано: 16 дек. 2025 в 21:02",
+      "metrics": {
+        "views": 334781,
+        "likes": 2289,
+        "comments": null,
+        "reviews": 2
+      },
+      "metric_count": 3
+    },
+    {
+      "work_id": 509323,
+      "work_title": "Казачонок 1860. Том 1",
+      "timestamp": "20251210233929",
+      "archive_url": "https://web.archive.org/web/20251210233929id_/https://author.today/work/509323",
+      "error": {
+        "type": "HTTPError",
+        "message": "HTTP Error 500: INTERNAL SERVER ERROR"
+      }
+    },
+    {
+      "work_id": 509323,
+      "work_title": "Казачонок 1860. Том 1",
+      "timestamp": "20251220165026",
+      "archive_url": "https://web.archive.org/web/20251220165026id_/https://author.today/work/509323",
+      "error": {
+        "type": "HTTPError",
+        "message": "HTTP Error 500: INTERNAL SERVER ERROR"
+      }
+    },
+    {
+      "work_id": 509323,
+      "work_title": "Казачонок 1860. Том 1",
+      "timestamp": "20260116211903",
+      "original": "https://author.today/work/509323",
+      "archive_url": "https://web.archive.org/web/20260116211903id_/https://author.today/work/509323",
+      "status": 200,
+      "decoded_bytes": 82205,
+      "compressed_sha256": "bb8031a7c81f6575063260d81912e78b0eb142077ccc6ae9478ca9036d36b133",
+      "decoded_sha256": "bfede0365815aad63d6f61aa421bb0f187b61892bf45a45f3ea421564e57854f",
+      "title": "Казачонок 1860. Том 1 - Петр Алмазный, Сергей Насоновский - читать книгу в онлайн-библиотеке / Опубликовано: 1 дек. 2025 в 21:00",
+      "metrics": {
+        "views": 506711,
+        "likes": 2465,
+        "comments": null,
+        "reviews": 2
+      },
+      "metric_count": 3
+    },
+    {
+      "work_id": 509323,
+      "work_title": "Казачонок 1860. Том 1",
+      "timestamp": "20260224225210",
+      "archive_url": "https://web.archive.org/web/20260224225210id_/https://author.today/work/509323",
+      "error": {
+        "type": "HTTPError",
+        "message": "HTTP Error 500: INTERNAL SERVER ERROR"
+      }
+    },
+    {
+      "work_id": 509323,
+      "work_title": "Казачонок 1860. Том 1",
+      "timestamp": "20260225120112",
+      "archive_url": "https://web.archive.org/web/20260225120112id_/https://author.today/work/509323",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 509323,
+      "work_title": "Казачонок 1860. Том 1",
+      "timestamp": "20260409113829",
+      "original": "https://author.today/work/509323",
+      "archive_url": "https://web.archive.org/web/20260409113829id_/https://author.today/work/509323",
+      "status": 200,
+      "decoded_bytes": 82054,
+      "compressed_sha256": "e5e1a5ac6f6ed0dc14cd4fb5fa770cb85508ab052adb4d8866194c9bf2e378bf",
+      "decoded_sha256": "7672ed0d01dcdc98523ccd47a04c255abe4de467fe865a3acf3b6362165ec304",
+      "title": "Казачонок 1860. Том 1 - Петр Алмазный, Сергей Насоновский - читать книгу в онлайн-библиотеке / Опубликовано: 1 дек. 2025 в 21:00",
+      "metrics": {
+        "views": 647457,
+        "likes": 3102,
+        "comments": null,
+        "reviews": 4
+      },
+      "metric_count": 3
+    },
+    {
+      "work_id": 509323,
+      "work_title": "Казачонок 1860. Том 1",
+      "timestamp": "20260414175601",
+      "archive_url": "https://web.archive.org/web/20260414175601id_/https://author.today/work/509323",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 509323,
+      "work_title": "Казачонок 1860. Том 1",
+      "timestamp": "20260430120834",
+      "archive_url": "https://web.archive.org/web/20260430120834id_/https://author.today/work/509323",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 509323,
+      "work_title": "Казачонок 1860. Том 1",
+      "timestamp": "20260713084804",
+      "archive_url": "https://web.archive.org/web/20260713084804id_/https://author.today/work/509323",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 536436,
+      "work_title": "Казачонок 1860. Том 2. АУДИО",
+      "timestamp": "20260209234202",
+      "archive_url": "https://web.archive.org/web/20260209234202id_/https://author.today/audiobook/536436",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 536436,
+      "work_title": "Казачонок 1860. Том 2. АУДИО",
+      "timestamp": "20260226044310",
+      "archive_url": "https://web.archive.org/web/20260226044310id_/https://author.today/audiobook/536436",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 522888,
+      "work_title": "Казачонок 1860. Том 1. АУДИО",
+      "timestamp": "20260225135017",
+      "archive_url": "https://web.archive.org/web/20260225135017id_/https://author.today/audiobook/522888",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 522888,
+      "work_title": "Казачонок 1860. Том 1. АУДИО",
+      "timestamp": "20260226044312",
+      "archive_url": "https://web.archive.org/web/20260226044312id_/https://author.today/audiobook/522888",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 492480,
+      "work_title": "Одинаковые. Том 5. Атлантида",
+      "timestamp": "20251001134007",
+      "archive_url": "https://web.archive.org/web/20251001134007id_/https://author.today/work/492480",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 492480,
+      "work_title": "Одинаковые. Том 5. Атлантида",
+      "timestamp": "20260220062509",
+      "archive_url": "https://web.archive.org/web/20260220062509id_/https://author.today/work/492480",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 484909,
+      "work_title": "Одинаковые. Том 4. Претория",
+      "timestamp": "20250905080655",
+      "archive_url": "https://web.archive.org/web/20250905080655id_/https://author.today/work/484909",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 484909,
+      "work_title": "Одинаковые. Том 4. Претория",
+      "timestamp": "20250905144422",
+      "archive_url": "https://web.archive.org/web/20250905144422id_/https://author.today/work/484909",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 484909,
+      "work_title": "Одинаковые. Том 4. Претория",
+      "timestamp": "20250908235919",
+      "archive_url": "https://web.archive.org/web/20250908235919id_/https://author.today/work/484909",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 484909,
+      "work_title": "Одинаковые. Том 4. Претория",
+      "timestamp": "20250916082756",
+      "archive_url": "https://web.archive.org/web/20250916082756id_/https://author.today/work/484909",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 484909,
+      "work_title": "Одинаковые. Том 4. Претория",
+      "timestamp": "20251001152942",
+      "archive_url": "https://web.archive.org/web/20251001152942id_/https://author.today/work/484909",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 484909,
+      "work_title": "Одинаковые. Том 4. Претория",
+      "timestamp": "20260204095532",
+      "archive_url": "https://web.archive.org/web/20260204095532id_/https://author.today/work/484909",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 477913,
+      "work_title": "Одинаковые. Том 3. Индокитай",
+      "timestamp": "20250824012913",
+      "archive_url": "https://web.archive.org/web/20250824012913id_/https://author.today/work/477913",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 477913,
+      "work_title": "Одинаковые. Том 3. Индокитай",
+      "timestamp": "20250916035441",
+      "archive_url": "https://web.archive.org/web/20250916035441id_/https://author.today/work/477913",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 477913,
+      "work_title": "Одинаковые. Том 3. Индокитай",
+      "timestamp": "20251001144847",
+      "original": "https://author.today/work/477913",
+      "archive_url": "https://web.archive.org/web/20251001144847id_/https://author.today/work/477913",
+      "status": 200,
+      "decoded_bytes": 84626,
+      "compressed_sha256": "b31939af5f8da87c3347081998a9e5254f74a1d9b08155ee3eac28509cf34369",
+      "decoded_sha256": "b31939af5f8da87c3347081998a9e5254f74a1d9b08155ee3eac28509cf34369",
+      "title": "Одинаковые. Том 3. Индокитай - Сергей Насоновский, Петр Алмазный - читать книгу в онлайн-библиотеке / Опубликовано: 13 авг. 2025 в 21:02",
+      "metrics": {
+        "views": 116867,
+        "likes": 1082,
+        "comments": null,
+        "reviews": 0
+      },
+      "metric_count": 3
+    },
+    {
+      "work_id": 477913,
+      "work_title": "Одинаковые. Том 3. Индокитай",
+      "timestamp": "20251122012840",
+      "archive_url": "https://web.archive.org/web/20251122012840id_/https://author.today/work/477913",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 477913,
+      "work_title": "Одинаковые. Том 3. Индокитай",
+      "timestamp": "20260306112758",
+      "original": "https://author.today/work/477913",
+      "archive_url": "https://web.archive.org/web/20260306112758id_/https://author.today/work/477913",
+      "status": 200,
+      "decoded_bytes": 85186,
+      "compressed_sha256": "5d99882d81288c7508d4ea2723d8174f09868e1174cee2c1aa46f611f444102a",
+      "decoded_sha256": "fd0baaf5b175af565bb3fb735d09e5e5029ca548c9eb73fa06ee6ed8a3b6463a",
+      "title": "Одинаковые. Том 3. Индокитай - Сергей Насоновский, Петр Алмазный - читать книгу в онлайн-библиотеке / Опубликовано: 13 авг. 2025 в 21:02",
+      "metrics": {
+        "views": 151006,
+        "likes": 1342,
+        "comments": null,
+        "reviews": 0
+      },
+      "metric_count": 3
+    },
+    {
+      "work_id": 471800,
+      "work_title": "Одинаковые. Том 2. Гимназисты",
+      "timestamp": "20250728182429",
+      "archive_url": "https://web.archive.org/web/20250728182429id_/https://author.today/work/471800",
+      "error": {
+        "type": "HTTPError",
+        "message": "HTTP Error 500: INTERNAL SERVER ERROR"
+      }
+    },
+    {
+      "work_id": 471800,
+      "work_title": "Одинаковые. Том 2. Гимназисты",
+      "timestamp": "20250729124146",
+      "archive_url": "https://web.archive.org/web/20250729124146id_/https://author.today/work/471800",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 471800,
+      "work_title": "Одинаковые. Том 2. Гимназисты",
+      "timestamp": "20250729124439",
+      "archive_url": "https://web.archive.org/web/20250729124439id_/https://author.today/work/471800",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 471800,
+      "work_title": "Одинаковые. Том 2. Гимназисты",
+      "timestamp": "20251001125857",
+      "archive_url": "https://web.archive.org/web/20251001125857id_/https://author.today/work/471800",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 471800,
+      "work_title": "Одинаковые. Том 2. Гимназисты",
+      "timestamp": "20260520111430",
+      "archive_url": "https://web.archive.org/web/20260520111430id_/https://author.today/work/471800",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 465624,
+      "work_title": "Одинаковые. Том 1. Адаптация",
+      "timestamp": "20250725185753",
+      "archive_url": "https://web.archive.org/web/20250725185753id_/https://author.today/work/465624",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 465624,
+      "work_title": "Одинаковые. Том 1. Адаптация",
+      "timestamp": "20250913025616",
+      "archive_url": "https://web.archive.org/web/20250913025616id_/https://author.today/work/465624",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 465624,
+      "work_title": "Одинаковые. Том 1. Адаптация",
+      "timestamp": "20251015081316",
+      "archive_url": "https://web.archive.org/web/20251015081316id_/https://author.today/work/465624",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 465624,
+      "work_title": "Одинаковые. Том 1. Адаптация",
+      "timestamp": "20251207142931",
+      "archive_url": "https://web.archive.org/web/20251207142931id_/https://author.today/work/465624",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 465624,
+      "work_title": "Одинаковые. Том 1. Адаптация",
+      "timestamp": "20260131053259",
+      "archive_url": "https://web.archive.org/web/20260131053259id_/https://author.today/work/465624",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 465624,
+      "work_title": "Одинаковые. Том 1. Адаптация",
+      "timestamp": "20260204095543",
+      "archive_url": "https://web.archive.org/web/20260204095543id_/https://author.today/work/465624",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 465624,
+      "work_title": "Одинаковые. Том 1. Адаптация",
+      "timestamp": "20260306112759",
+      "archive_url": "https://web.archive.org/web/20260306112759id_/https://author.today/work/465624",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 465624,
+      "work_title": "Одинаковые. Том 1. Адаптация",
+      "timestamp": "20260321133716",
+      "archive_url": "https://web.archive.org/web/20260321133716id_/https://author.today/work/465624",
+      "error": {
+        "type": "URLError",
+        "message": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+      }
+    },
+    {
+      "work_id": 465624,
+      "work_title": "Одинаковые. Том 1. Адаптация",
+      "timestamp": "20260629012232",
+      "archive_url": "https://web.archive.org/web/20260629012232id_/https://author.today/work/465624",
+      "error": {
+        "type": "HTTPError",
+        "message": "HTTP Error 500: INTERNAL SERVER ERROR"
+      }
+    }
+  ]
+}
