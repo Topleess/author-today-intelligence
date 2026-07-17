@@ -25,8 +25,15 @@ Updated: 2026-07-16
 - Container restart preserved summary state.
 - Browser console: zero JavaScript errors.
 
-## Remaining before publication
+## Final publication
 
-- Integrate external architecture/archive review.
-- Run final unit, Compose, staged-tree privacy/secret, clean-clone and PDF checks.
-- Commit, push, verify GitHub Actions and release.
+- External security/archive reviews integrated.
+- Clean clone from the public GitHub URL installed version `0.2.0`; 8 tests and privacy scan passed.
+- Docker clean-clone smoke passed: health OK and POST denied with HTTP 405.
+- Public repository HEAD: `12a0564a226f72ac3232df558f64f231367a28de` before this checkpoint-only commit.
+- Release `v0.2.0` published with verified PDF asset.
+- GitHub Actions runs for the release completed successfully.
+
+## Standing follow-up
+
+The separate 14-day public monitoring remains active, with final report due 2026-07-30. Automated authenticated browser collection remains blocked pending written Author.Today permission; the supported private-data path is manual local import.
