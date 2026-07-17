@@ -1,0 +1,50 @@
+services:
+  volume-init:
+    build: .
+    user: "0:0"
+    entrypoint: ["sh", "-c"]
+    command: ["chown -R 10001:10001 /data"]
+    volumes:
+      - atintel-data:/data
+    cap_drop: ["ALL"]
+    cap_add: ["CHOWN"]
+    security_opt:
+      - no-new-privileges:true
+
+  controller:
+    build: .
+    init: true
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8787:8787"
+    volumes:
+      - atintel-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid,nodev
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 100
+    mem_limit: 256m
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      volume-init:
+        condition: service_completed_successfully
+
+  public-sync:
+    build: .
+    profiles: ["sync"]
+    volumes:
+      - atintel-data:/data
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    command: ["bootstrap","--sorting","popular","--output","/data/public-latest.json","--db","/data/analytics.sqlite3"]
+    depends_on:
+      volume-init:
+        condition: service_completed_successfully
+
+volumes:
+  atintel-data:

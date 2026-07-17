@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-07-16T12:00:00Z",
+  "source": {
+    "class": "owner_manual_export",
+    "url": "manual://author-selected-export",
+    "method": "User selected and imported a local file obtained through normal site navigation"
+  },
+  "works": [
+    {
+      "work_id": 900001,
+      "title": "Synthetic demonstration work",
+      "author_name": "Example Author",
+      "author_slug": "example",
+      "series_id": null,
+      "series_title": null,
+      "url": "https://author.today/work/900001"
+    }
+  ],
+  "work_snapshots": [],
+  "rankings": [],
+  "comments": [
+    {
+      "comment_id": "synthetic-comment-1",
+      "work_id": 900001,
+      "chapter_ref": "chapter-7",
+      "profile_url": "https://author.today/u/example-reader",
+      "display_name": "Example Reader",
+      "body": "Синтетический пример: понравилось точное описание быта эпохи.",
+      "source_url": "https://author.today/work/900001#synthetic-comment-1",
+      "published_at": "2026-07-15T18:30:00Z",
+      "imported_at": "2026-07-16T12:00:00Z",
+      "tags": [
+        {
+          "taxonomy_path": "Достоверность > Быт эпохи",
+          "stance": "praise",
+          "evidence_excerpt": "понравилось точное описание быта эпохи",
+          "confidence": 1.0,
+          "derivation": "human",
+          "confirmed": true
+        }
+      ]
+    }
+  ]
+}

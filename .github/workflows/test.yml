@@ -20,3 +20,22 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -e .
       - run: python -m unittest discover -s tests -v
+      - run: python scripts/privacy_scan.py
+
+  docker-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose config --quiet
+      - run: docker compose build controller
+      - run: docker compose up -d controller
+      - name: Verify read-only local API
+        run: |
+          for i in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:8787/api/health && break
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:8787/api/summary
+          test "$(curl -sS -o /dev/null -w '%{http_code}' -X POST http://127.0.0.1:8787/api/summary)" = "405"
+      - if: always()
+        run: docker compose down -v
