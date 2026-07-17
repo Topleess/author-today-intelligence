@@ -94,6 +94,7 @@ See:
 - [API contract](docs/API_CONTRACT.md)
 - [Archive evidence](docs/ARCHIVE_PROBE.md)
 - [Reader observations](docs/READER_OBSERVATIONS.md)
+- [Permission-gated browser design](docs/PERMISSION_GATED_BROWSER.md)
 - [Agent workflow](docs/AGENT_WORKFLOW.md)
 - [Data model](docs/DATA_MODEL.md)
 

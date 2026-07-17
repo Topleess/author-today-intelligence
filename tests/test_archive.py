@@ -5,9 +5,16 @@ from atintel.archive import commoncrawl_captures, validate_target, wayback_captu
 
 class ArchiveTest(unittest.TestCase):
     def test_target_allowlist(self):
-        self.assertEqual(validate_target("https://author.today/work/123?x=1"), "https://author.today/work/123")
-        for url in ("http://author.today/work/1", "https://evil.example/work/1", "https://author.today/account/"):
-            with self.assertRaises(ValueError): validate_target(url)
+        self.assertEqual(validate_target("https://author.today/work/123?utm_source=x"), "https://author.today/work/123")
+        self.assertEqual(validate_target("https://author.today/u/example_reader"), "https://author.today/u/example_reader")
+        rejected=(
+            "http://author.today/work/1", "https://evil.example/work/1", "https://author.today/account/",
+            "https://user:pass@author.today/work/1", "https://author.today:443/work/1",
+            "https://author.today/work/1#comments", "https://author.today/work/1/reviews",
+            "https://author.today/u/name/comments", "https://author.today/work/*", "https://author.today/work/%2Fetc",
+        )
+        for url in rejected:
+            with self.assertRaises(ValueError, msg=url): validate_target(url)
 
     @patch("atintel.archive.get_json")
     def test_wayback_provenance(self, get_json):

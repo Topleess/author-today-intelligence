@@ -1,8 +1,12 @@
 # Archive coverage probe — 2026-07-16
 
-## Wayback Machine
+## Preliminary dated coverage observations
 
-Read-only CDX queries returned:
+These counts are observations from the specific queries run on 2026-07-16. They are **not** claims about complete Author.Today or Common Crawl historical coverage.
+
+### Wayback Machine
+
+Read-only CDX probes observed:
 
 - Author.Today root snapshots beginning in 2017.
 - Archived `/work/...` pages, including works and review pages.
@@ -11,11 +15,11 @@ Read-only CDX queries returned:
 
 Interpretation: Wayback can provide historical control points and metadata, but not a guaranteed regular time series.
 
-## Common Crawl
+### Common Crawl
 
-Index: `CC-MAIN-2026-25`.
+Dated preliminary index probe: `CC-MAIN-2026-25`. This is one index, not all Common Crawl history.
 
-Exact prefix queries returned:
+The tested prefix queries observed:
 
 - 1,301 records under `https://author.today/work/`.
 - 1,453 records under `https://author.today/u/`.

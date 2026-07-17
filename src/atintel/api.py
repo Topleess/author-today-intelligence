@@ -1,5 +1,5 @@
 from __future__ import annotations
-import json, os, urllib.parse, urllib.request
+import json, urllib.parse, urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -8,13 +8,12 @@ API_BASE = "https://api.author.today/v1"
 def utc_now() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
-def request_json(path: str, params: dict | None = None, token: str | None = None) -> dict:
+def request_json(path: str, params: dict | None = None) -> dict:
     url = f"{API_BASE}/{path.lstrip('/')}"
     if params:
         url += "?" + urllib.parse.urlencode(params)
-    access_token = token or os.getenv("AUTHOR_TODAY_API_TOKEN", "guest")
     req = urllib.request.Request(url, headers={
-        "Authorization": f"Bearer {access_token}",
+        "Authorization": "Bearer guest",
         "Accept": "application/json",
         "User-Agent": "author-today-intelligence/0.1 (+https://github.com/)"
     })
