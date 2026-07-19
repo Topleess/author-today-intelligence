@@ -30,11 +30,18 @@ def normalize_search(payload: dict, source_url: str, captured_at: str) -> dict:
     works, snapshots, rankings = [], [], []
     for position, item in enumerate(rows, 1):
         work_id = int(item["id"])
+        authors = []
+        if item.get("authorFIO"):
+            authors.append({"name": item["authorFIO"], "slug": item.get("authorUserName"), "position": 1, "confirmed": True})
+        for prefix in ("coAuthor", "secondCoAuthor"):
+            if item.get(f"{prefix}FIO") and item.get(f"{prefix}Confirmed"):
+                authors.append({"name": item[f"{prefix}FIO"], "slug": item.get(f"{prefix}UserName"), "position": len(authors) + 1, "confirmed": True})
         works.append({
             "work_id": work_id,
             "title": item.get("title") or f"work {work_id}",
-            "author_name": item.get("authorFIO"),
+            "author_name": ", ".join(a["name"] for a in authors) or None,
             "author_slug": item.get("authorUserName"),
+            "authors": authors,
             "series_id": item.get("seriesId"),
             "series_title": item.get("seriesTitle"),
             "url": f"https://author.today/work/{work_id}"

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "case_id": "SERGEY-563328-MOREKNIG-CASE-20260717",
+  "work_id": 563328,
+  "candidate_id": "SERGEY-563328-MOREKNIG-20260717",
+  "work_title": "Абиссинец 1889. Том 1",
+  "rights_holder": "Сергей Насоновский и Сергей Щербатых; объём полномочий требует подтверждения",
+  "source_url": "https://moreknig.org/fantastika/popadancy/450250-abissinec-1889-tom-1.html",
+  "captured_at": "2026-07-17T14:35:50Z",
+  "qualification": "unclear",
+  "qualification_reason": "Страница заявляет бесплатное чтение и скачивание, но совпадение полного текста и отсутствие лицензии ещё не подтверждены правообладателями.",
+  "reviewed_by_human": true,
+  "legal_review_status": "not_reviewed",
+  "capture_sha256": "edfc3f573fb331ec56c4cacf3adf075eac2b734855f770925294165a43a58078"
+}

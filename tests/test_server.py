@@ -17,7 +17,7 @@ class ServerContractTest(unittest.TestCase):
         status,health=self.get("/api/health"); self.assertEqual(status,200)
         self.assertEqual(health["private_browser_automation"],"disabled_by_platform_terms")
         payload=[]
-        for path in ("/api/summary","/api/works","/api/archives","/api/tags","/api/profiles","/api/comments","/api/comments/synthetic-comment-1"):
+        for path in ("/api/summary","/api/works","/api/archives","/api/tags","/api/profiles","/api/comments","/api/comments/synthetic-comment-1","/api/rights/candidates","/api/rights/cases"):
             payload.append(self.get(path)[1])
         text=json.dumps(payload).lower()
         for forbidden in ('"password"','"cookie"','"cookies"','"authorization"','"localstorage"','"otp"','"token"','"session"'):

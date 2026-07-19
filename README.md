@@ -15,6 +15,9 @@ A local-first, evidence-first research tool for Author.Today. It collects public
 - deterministic graph/table UI at `http://127.0.0.1:8787`;
 - read-only agent API with no credential/browser/filesystem endpoints;
 - Docker restart-safe storage and tests.
+- normalized multi-author works (including confirmed coauthors);
+- rights-monitoring candidates, evidence hashes, human-reviewed case states and author/counsel packages;
+- one read-only dashboard for analytics and rights cases.
 
 ## Important private-access boundary
 
@@ -75,6 +78,9 @@ atintel bootstrap --sorting popular --output raw/popular.json --db analytics.sql
 atintel archive https://author.today/work/100705 --limit 10 --output raw/archive.json
 atintel archive-ingest raw/archive.json --db analytics.sqlite3
 atintel ingest examples/manual_private_import.synthetic.json --db analytics.sqlite3
+atintel rights-candidate-ingest examples/rights_candidate_sergey_moreknig.json --db analytics.sqlite3
+atintel rights-case-ingest examples/rights_case_sergey_moreknig.json --db analytics.sqlite3
+atintel rights-report SERGEY-563328-MOREKNIG-CASE-20260717 --db analytics.sqlite3
 atintel serve --db analytics.sqlite3
 ```
 
@@ -83,9 +89,10 @@ No third-party Python runtime dependency is required.
 ## Architecture
 
 ```text
-Documented API ──────────────┐
-Wayback / Common Crawl ──────┼─> CLI -> local SQLite -> read-only API/UI -> agent
-User-selected manual export ─┘
+Documented API ───────────────┐
+Wayback / Common Crawl ───────┼─> CLI -> local SQLite -> read-only API/UI -> agent
+User-selected manual export ──┤
+Reviewed rights candidates ───┘
 ```
 
 See:
@@ -97,6 +104,9 @@ See:
 - [Permission-gated browser design](docs/PERMISSION_GATED_BROWSER.md)
 - [Agent workflow](docs/AGENT_WORKFLOW.md)
 - [Data model](docs/DATA_MODEL.md)
+- [Unified product and rights module](docs/RIGHTS_MODULE_INDEX.ru.md)
+- [Merge inventory](docs/MERGE_INVENTORY.md)
+- [Sergey pilot](reports/RIGHTS_PILOT_SERGEY_20260717.ru.md)
 
 ## Trust model
 

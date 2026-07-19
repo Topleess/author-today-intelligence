@@ -1,0 +1,58 @@
+[
+  {
+    "url": "https://www.litres.ru/book/nasonovsky/abissinec-1889-tom-1-74048809/",
+    "captured_at": "2026-07-17T14:35:50.686783+00:00",
+    "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>"
+  },
+  {
+    "url": "https://moreknig.org/fantastika/popadancy/450250-abissinec-1889-tom-1.html",
+    "captured_at": "2026-07-17T14:35:50.732881+00:00",
+    "status": 200,
+    "final_url": "https://moreknig.org/fantastika/popadancy/450250-abissinec-1889-tom-1.html",
+    "content_type": "text/html; charset=utf-8",
+    "bytes_read": 178398,
+    "sha256": "edfc3f573fb331ec56c4cacf3adf075eac2b734855f770925294165a43a58078",
+    "page_title": "Абиссинец 1889. Том 1 - Насоновский Сергей, Щербатых Сергей - скачать книгу бесплатно в fb2, epub, mobi, pdf, txt и читать онлайн",
+    "signals": {
+      "абиссинец 1889": true,
+      "сергей насоновский": false,
+      "читать онлайн": true,
+      "скачать": true,
+      "купить": false
+    },
+    "visible_text_chars_sampled": 31013
+  },
+  {
+    "url": "https://kniga-online.com/books/fantastika-i-fjentezi/alternativnaja-istorija/437866-abissinec-1889-tom-1-sergei-nasonovskii.html",
+    "captured_at": "2026-07-17T14:35:51.365709+00:00",
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://coollib.net/b/840025-sergey-scherbatyih-abissinets-1889-tom-1/read",
+    "captured_at": "2026-07-17T14:35:51.479663+00:00",
+    "status": 200,
+    "final_url": "https://coollib.net/b/840025-sergey-scherbatyih-abissinets-1889-tom-1/read",
+    "content_type": "text/html; charset=utf-8",
+    "bytes_read": 68434,
+    "sha256": "8446daaa9188e57f32a674dca1dedb8272a991f058c0946f831cac98a4cebd52",
+    "page_title": "Абиссинец 1889. Том 1 [Сергей Щербатых] (fb2) читать онлайн | КулЛиб электронная библиотека",
+    "signals": {
+      "абиссинец 1889": true,
+      "сергей насоновский": false,
+      "читать онлайн": true,
+      "скачать": true,
+      "купить": true
+    },
+    "visible_text_chars_sampled": 27139
+  },
+  {
+    "url": "http://lib.rus.ec/b/817136",
+    "captured_at": "2026-07-17T14:35:51.893455+00:00",
+    "error": "URLError: <urlopen error unknown url type: socks5h>"
+  },
+  {
+    "url": "http://flibusta.site/s/110972",
+    "captured_at": "2026-07-17T14:35:51.893699+00:00",
+    "error": "URLError: <urlopen error unknown url type: socks5h>"
+  }
+]
