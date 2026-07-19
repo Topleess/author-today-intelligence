@@ -10,7 +10,7 @@
 
 ## Что это сейчас
 
-Это **decision-first и evidence-first локальный прототип**, проверенный на публичном портфеле Сергея Насоновского. Первый экран сначала отвечает, что изменилось и что проверить, а формулы и источники раскрываются по запросу. Это не готовый SaaS и не замена кабинета Author.Today.
+Это **decision-first и evidence-first локальный прототип**, проверенный на публичном портфеле Сергея Насоновского. Первый экран сначала отвечает, что изменилось и что проверить, а формулы и источники раскрываются по запросу. В той же локальной базе есть отдельный контур кандидатов возможных незаконных публикаций с обязательной ручной квалификацией. Это не готовый SaaS, не замена кабинета Author.Today и не юридическое заключение.
 
 На контрольном срезе 17 июля 2026 года он показывает:
 
@@ -106,6 +106,8 @@ pip install -e .
 
 atintel author-add https://author.today/u/nasonovsky --name "Сергей Насоновский"
 atintel bootstrap --sorting popular --output raw/popular.json --db analytics.sqlite3
+atintel rights-candidate-ingest examples/rights_candidate_sergey_moreknig.json --db analytics.sqlite3
+atintel rights-case-ingest examples/rights_case_sergey_moreknig.json --db analytics.sqlite3
 atintel serve --db analytics.sqlite3
 ```
 
@@ -160,7 +162,7 @@ curl -i -X POST http://127.0.0.1:8787/api/summary  # ожидается HTTP 405
 Wayback/Common Crawl audit ───┘
 ```
 
-Нет SaaS, billing, облачного хранилища, приватного Chrome-worker или модуля защиты авторских прав.
+Нет SaaS, billing, облачного хранилища или приватного Chrome-worker. Контур мониторинга прав хранит только проверяемые кандидаты и evidence; техническое совпадение не объявляется нарушением без ручной проверки.
 
 ## Документы
 
@@ -173,6 +175,8 @@ Wayback/Common Crawl audit ───┘
 - [Самостоятельный UX-бриф](docs/UX_BRIEF_SERGEY.ru.md)
 - [Сравнение трёх концепций и решение](docs/UX_CONCEPT_DECISION.ru.md)
 - [Дизайн-система Quiet Evidence](DESIGN.md)
+- [Контур мониторинга прав](docs/RIGHTS_MODULE_INDEX.ru.md)
+- [Пилотный отчёт по Сергею](reports/RIGHTS_PILOT_SERGEY_20260717.ru.md)
 - [PDF-обзор](docs/Author.Today-Intelligence-Sergey.ru.pdf)
 
 ## Лицензия

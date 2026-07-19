@@ -1,9 +1,13 @@
 from __future__ import annotations
 import argparse
+import json
 from .api import collect_catalog
 from .archive import probe
 from .server import serve
-from .storage import add_author_target, connect, init, ingest_archive_probe, ingest_file, latest_report
+from .storage import (
+    add_author_target, connect, init, ingest_archive_probe, ingest_file,
+    ingest_rights_candidate, ingest_rights_case, latest_report, rights_case_report,
+)
 
 
 def main() -> None:
@@ -27,6 +31,12 @@ def main() -> None:
     server.add_argument("--db", default="analytics.sqlite3"); server.add_argument("--host", default="127.0.0.1"); server.add_argument("--port", type=int, default=8787)
     author = sub.add_parser("author-add", help="Add an explicit public author profile target locally")
     author.add_argument("profile_url"); author.add_argument("--name"); author.add_argument("--db", default="analytics.sqlite3")
+    rights_candidate = sub.add_parser("rights-candidate-ingest", help="Ingest a reviewed rights candidate")
+    rights_candidate.add_argument("json_file"); rights_candidate.add_argument("--db", default="analytics.sqlite3")
+    rights_case = sub.add_parser("rights-case-ingest", help="Ingest a human-reviewed rights case")
+    rights_case.add_argument("json_file"); rights_case.add_argument("--db", default="analytics.sqlite3")
+    rights_report = sub.add_parser("rights-report", help="Print a rights case evidence report")
+    rights_report.add_argument("case_id"); rights_report.add_argument("--db", default="analytics.sqlite3")
     args = parser.parse_args()
     if args.command == "collect": print(collect_catalog(args.output, sorting=args.sorting))
     elif args.command == "bootstrap":
@@ -39,6 +49,12 @@ def main() -> None:
     elif args.command == "archive-ingest":
         db=connect(args.db); print(ingest_archive_probe(db,args.probe))
     elif args.command == "author-add": print(add_author_target(connect(args.db),args.profile_url,args.name))
+    elif args.command == "rights-candidate-ingest":
+        db=connect(args.db); ingest_rights_candidate(db,json.load(open(args.json_file,encoding="utf-8"))); print(args.json_file)
+    elif args.command == "rights-case-ingest":
+        db=connect(args.db); ingest_rights_case(db,json.load(open(args.json_file,encoding="utf-8"))); print(args.json_file)
+    elif args.command == "rights-report":
+        db=connect(args.db); print(json.dumps(rights_case_report(db,args.case_id),ensure_ascii=False,indent=2))
     elif args.command == "serve": serve(args.db,args.host,args.port)
     else:
         db=connect(args.db); print(latest_report(db))

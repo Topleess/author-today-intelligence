@@ -6,7 +6,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from importlib.resources import files
 from urllib.parse import parse_qs, urlparse
 
-from .storage import connect, init
+from .storage import connect, init, rights_case_report
 
 
 def _rows(db, sql, params=()):
@@ -67,6 +67,12 @@ class Handler(BaseHTTPRequestHandler):
                     "snapshots": db.execute(
                         "SELECT COUNT(*) FROM work_snapshots"
                     ).fetchone()[0],
+                    "rights candidates": db.execute(
+                        "SELECT COUNT(*) FROM rights_candidates"
+                    ).fetchone()[0],
+                    "rights cases": db.execute(
+                        "SELECT COUNT(*) FROM rights_cases"
+                    ).fetchone()[0],
                     "archive captures": db.execute(
                         "SELECT COUNT(*) FROM archive_captures"
                     ).fetchone()[0],
@@ -124,6 +130,20 @@ class Handler(BaseHTTPRequestHandler):
                     "SELECT source_class,target_url,captured_at,archive_url,digest,locator_json FROM archive_captures ORDER BY captured_at DESC LIMIT 100",
                 )
             )
+        if parsed.path == "/api/rights/candidates":
+            return self._json(
+                _rows(db, "SELECT candidate_id,work_id,source_url,observed_at,page_title,access_status,capture_sha256,license_status FROM rights_candidates ORDER BY observed_at DESC")
+            )
+        if parsed.path == "/api/rights/cases":
+            return self._json(
+                _rows(db, "SELECT case_id,work_id,candidate_id,work_title,rights_holder,source_url,captured_at,qualification,qualification_reason,reviewed_by_human,legal_review_status FROM rights_cases ORDER BY captured_at DESC")
+            )
+        rights_match = re.fullmatch(r"/api/rights/cases/([^/]+)", parsed.path)
+        if rights_match:
+            try:
+                return self._json(rights_case_report(db, rights_match.group(1)))
+            except KeyError:
+                return self._json({"error": "not found"}, 404)
         if parsed.path == "/api/tags":
             return self._json(
                 _rows(

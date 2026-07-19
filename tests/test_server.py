@@ -138,6 +138,8 @@ class ServerContractTest(unittest.TestCase):
         expected_summary = {
             "portfolio works",
             "snapshots",
+            "rights candidates",
+            "rights cases",
             "archive captures",
             "comments",
             "confirmed tags",
@@ -184,7 +186,8 @@ class ServerContractTest(unittest.TestCase):
             "/api/health", "/api/summary", "/api/works", "/api/archives",
             "/api/tags", "/api/profiles", "/api/comments",
             "/api/comments/synthetic-comment-1", "/api/authors",
-            "/api/rankings", "/api/source-quality",
+            "/api/rankings", "/api/source-quality", "/api/rights/candidates",
+            "/api/rights/cases",
         ):
             payload.append(self.get(path)[1])
         text = json.dumps(payload).lower()

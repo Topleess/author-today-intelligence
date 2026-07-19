@@ -1,0 +1,37 @@
+{
+  "captured_at": "2026-07-17T14:36:14.125935+00:00",
+  "urls": {
+    "official": "https://author.today/work/563328",
+    "moreknig": "https://moreknig.org/fantastika/popadancy/450250-abissinec-1889-tom-1.html",
+    "coollib": "https://coollib.net/b/840025-sergey-scherbatyih-abissinets-1889-tom-1/read"
+  },
+  "sha256": {
+    "official": "cd603ba47bb2269339e0ff087a75f45713a791aa10005cfc89adef7f22128491",
+    "moreknig": "edfc3f573fb331ec56c4cacf3adf075eac2b734855f770925294165a43a58078",
+    "coollib": "5effd41b68176067d0abee4bf1690fd909a6b4617eb9c9e0a2c493acbe4c9905"
+  },
+  "bytes": {
+    "official": 82219,
+    "moreknig": 178398,
+    "coollib": 68434
+  },
+  "visible_text_chars": {
+    "official": 4891,
+    "moreknig": 25495,
+    "coollib": 22357
+  },
+  "matching_visible_sequences": [],
+  "download_links": {
+    "moreknig": [
+      "/engine/download.php?id=1350703",
+      "https://d.moreknig.org/engine/download.php?id=1350703",
+      "/engine/download.php?id=1350704",
+      "https://d.moreknig.org/engine/download.php?id=1350704",
+      "/engine/download.php?id=1350705",
+      "https://d.moreknig.org/engine/download.php?id=1350705"
+    ],
+    "coollib": [
+      "/fb2-validator"
+    ]
+  }
+}

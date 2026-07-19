@@ -8,3 +8,5 @@ leads/
 .env
 .DS_Store
 reports/*.pdf
+test-results/
+playwright-report/

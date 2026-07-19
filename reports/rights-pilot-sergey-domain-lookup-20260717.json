@@ -1,0 +1,126 @@
+{
+  "captured_at": "2026-07-17T14:36:30.331562+00:00",
+  "domains": [
+    {
+      "host": "moreknig.org",
+      "addresses": [
+        "109.69.16.141"
+      ],
+      "rdap_handle": null,
+      "rdap_status": [
+        "client transfer prohibited"
+      ],
+      "nameservers": [
+        "leah.ns.cloudflare.com",
+        "tim.ns.cloudflare.com"
+      ],
+      "entities": [
+        {
+          "roles": [
+            "registrar"
+          ],
+          "handle": "2487",
+          "vcard": [
+            "vcard",
+            [
+              [
+                "version",
+                {},
+                "text",
+                "4.0"
+              ],
+              [
+                "fn",
+                {},
+                "text",
+                "Internet Domain Service BS Corp"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "host": "coollib.net",
+      "addresses": [
+        "185.197.162.22"
+      ],
+      "rdap_handle": "1737351322_DOMAIN_NET-VRSN",
+      "rdap_status": [
+        "client transfer prohibited"
+      ],
+      "nameservers": [
+        "NS-CANADA.TOPDNS.COM",
+        "NS-UK.TOPDNS.COM",
+        "NS-USA.TOPDNS.COM"
+      ],
+      "entities": [
+        {
+          "roles": [
+            "registrar"
+          ],
+          "handle": "2487",
+          "vcard": [
+            "vcard",
+            [
+              [
+                "version",
+                {},
+                "text",
+                "4.0"
+              ],
+              [
+                "fn",
+                {},
+                "text",
+                "Internet Domain Service BS Corp"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "host": "kniga-online.com",
+      "addresses": [
+        "104.21.37.146",
+        "172.67.209.110",
+        "2606:4700:3030::ac43:d16e",
+        "2606:4700:3036::6815:2592"
+      ],
+      "rdap_handle": "2612091353_DOMAIN_COM-VRSN",
+      "rdap_status": [
+        "client transfer prohibited"
+      ],
+      "nameservers": [
+        "LOCHLAN.NS.CLOUDFLARE.COM",
+        "RUTH.NS.CLOUDFLARE.COM"
+      ],
+      "entities": [
+        {
+          "roles": [
+            "registrar"
+          ],
+          "handle": "1068",
+          "vcard": [
+            "vcard",
+            [
+              [
+                "version",
+                {},
+                "text",
+                "4.0"
+              ],
+              [
+                "fn",
+                {},
+                "text",
+                "NameCheap, Inc."
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "captured_at": "2026-07-17T14:34:50.148122+00:00",
+  "provider": "Brave Search public HTML",
+  "profile": "https://author.today/u/nasonovsky",
+  "queries": [
+    {
+      "work_id": 614116,
+      "work_title": "Абиссинец 1889. Том 3",
+      "official_url": "https://author.today/work/614116",
+      "query": "\"Абиссинец 1889. Том 3\" \"Сергей Насоновский\" -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%90%D0%B1%D0%B8%D1%81%D1%81%D0%B8%D0%BD%D0%B5%D1%86%201889.%20%D0%A2%D0%BE%D0%BC%203%22%20%22%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9%20%D0%9D%D0%B0%D1%81%D0%BE%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%22%20-site%3Aauthor.today&source=web",
+      "results": [
+        {
+          "title": "Searchfloor searchfloor.org › book-info › 25963 Абиссинец 1889. Том 3 / Сергей Насоновский, Сергей Щербатых",
+          "url": "https://searchfloor.org/book-info/25963",
+          "host": "searchfloor.org"
+        },
+        {
+          "title": "Litres litres.ru › книги › сергей насоновский › на краю империи (с. насоновский, с. щербатых) Сергей Насоновский – серия книг На краю Империи (С. Насоновский, С. Щербатых) – скачать по порядку в fb2 или читать онлайн",
+          "url": "https://www.litres.ru/series/na-kraiu-imperii-s-nasonovskii-s-shcherbatykh-914822/",
+          "host": "www.litres.ru"
+        },
+        {
+          "title": "Searchfloor searchfloor.is Цокольный этаж",
+          "url": "https://searchfloor.is/?include_genres=28",
+          "host": "searchfloor.is"
+        },
+        {
+          "title": "Brave Talk",
+          "url": "https://talk.brave.com/?mtm_source=brave-search&mtm_medium=searchfooter&mtm_campaign=brave-search&mtm_content=evergreen",
+          "host": "talk.brave.com"
+        }
+      ],
+      "http_ok": true,
+      "result_count": 4
+    },
+    {
+      "work_id": 614116,
+      "work_title": "Абиссинец 1889. Том 3",
+      "official_url": "https://author.today/work/614116",
+      "query": "\"Абиссинец 1889. Том 3\" читать онлайн -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%90%D0%B1%D0%B8%D1%81%D1%81%D0%B8%D0%BD%D0%B5%D1%86%201889.%20%D0%A2%D0%BE%D0%BC%203%22%20%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%20-site%3Aauthor.today&source=web",
+      "results": [
+        {
+          "title": "Searchfloor searchfloor.org › book-info › 25963 Абиссинец 1889. Том 3 / Сергей Насоновский, Сергей Щербатых",
+          "url": "https://searchfloor.org/book-info/25963",
+          "host": "searchfloor.org"
+        },
+        {
+          "title": "Litres litres.ru › книги › сергей насоновский › на краю империи (с. насоновский, с. щербатых) Сергей Насоновский – серия книг На краю Империи (С. Насоновский, С. Щербатых) – скачать по порядку в fb2 или читать онлайн",
+          "url": "https://www.litres.ru/series/na-kraiu-imperii-s-nasonovskii-s-shcherbatykh-914822/",
+          "host": "www.litres.ru"
+        },
+        {
+          "title": "LitRes litres.ru › книги › историческая фантастика › сергей насоновский › абиссинец 1889. том 1 Абиссинец 1889. Том 1 Сергей Насоновский Автор – купить и скачать книгу в fb2, epub, pdf на Литрес",
+          "url": "https://www.litres.ru/book/nasonovsky/abissinec-1889-tom-1-74048809/",
+          "host": "www.litres.ru"
+        },
+        {
+          "title": "Brave Talk",
+          "url": "https://talk.brave.com/?mtm_source=brave-search&mtm_medium=searchfooter&mtm_campaign=brave-search&mtm_content=evergreen",
+          "host": "talk.brave.com"
+        }
+      ],
+      "http_ok": true,
+      "result_count": 4
+    },
+    {
+      "work_id": 614116,
+      "work_title": "Абиссинец 1889. Том 3",
+      "official_url": "https://author.today/work/614116",
+      "query": "\"Абиссинец 1889. Том 3\" скачать -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%90%D0%B1%D0%B8%D1%81%D1%81%D0%B8%D0%BD%D0%B5%D1%86%201889.%20%D0%A2%D0%BE%D0%BC%203%22%20%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 605707,
+      "work_title": "Казачонок 1862. Том 10",
+      "official_url": "https://author.today/work/605707",
+      "query": "\"Казачонок 1862. Том 10\" \"Сергей Насоновский\" -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201862.%20%D0%A2%D0%BE%D0%BC%2010%22%20%22%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9%20%D0%9D%D0%B0%D1%81%D0%BE%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%22%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 605707,
+      "work_title": "Казачонок 1862. Том 10",
+      "official_url": "https://author.today/work/605707",
+      "query": "\"Казачонок 1862. Том 10\" читать онлайн -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201862.%20%D0%A2%D0%BE%D0%BC%2010%22%20%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 605707,
+      "work_title": "Казачонок 1862. Том 10",
+      "official_url": "https://author.today/work/605707",
+      "query": "\"Казачонок 1862. Том 10\" скачать -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201862.%20%D0%A2%D0%BE%D0%BC%2010%22%20%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 599100,
+      "work_title": "Абиссинец 1889. Том 2",
+      "official_url": "https://author.today/work/599100",
+      "query": "\"Абиссинец 1889. Том 2\" \"Сергей Насоновский\" -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%90%D0%B1%D0%B8%D1%81%D1%81%D0%B8%D0%BD%D0%B5%D1%86%201889.%20%D0%A2%D0%BE%D0%BC%202%22%20%22%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9%20%D0%9D%D0%B0%D1%81%D0%BE%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%22%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 599100,
+      "work_title": "Абиссинец 1889. Том 2",
+      "official_url": "https://author.today/work/599100",
+      "query": "\"Абиссинец 1889. Том 2\" читать онлайн -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%90%D0%B1%D0%B8%D1%81%D1%81%D0%B8%D0%BD%D0%B5%D1%86%201889.%20%D0%A2%D0%BE%D0%BC%202%22%20%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 599100,
+      "work_title": "Абиссинец 1889. Том 2",
+      "official_url": "https://author.today/work/599100",
+      "query": "\"Абиссинец 1889. Том 2\" скачать -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%90%D0%B1%D0%B8%D1%81%D1%81%D0%B8%D0%BD%D0%B5%D1%86%201889.%20%D0%A2%D0%BE%D0%BC%202%22%20%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 563328,
+      "work_title": "Абиссинец 1889. Том 1",
+      "official_url": "https://author.today/work/563328",
+      "query": "\"Абиссинец 1889. Том 1\" \"Сергей Насоновский\" -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%90%D0%B1%D0%B8%D1%81%D1%81%D0%B8%D0%BD%D0%B5%D1%86%201889.%20%D0%A2%D0%BE%D0%BC%201%22%20%22%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9%20%D0%9D%D0%B0%D1%81%D0%BE%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%22%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 563328,
+      "work_title": "Абиссинец 1889. Том 1",
+      "official_url": "https://author.today/work/563328",
+      "query": "\"Абиссинец 1889. Том 1\" читать онлайн -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%90%D0%B1%D0%B8%D1%81%D1%81%D0%B8%D0%BD%D0%B5%D1%86%201889.%20%D0%A2%D0%BE%D0%BC%201%22%20%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 563328,
+      "work_title": "Абиссинец 1889. Том 1",
+      "official_url": "https://author.today/work/563328",
+      "query": "\"Абиссинец 1889. Том 1\" скачать -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%90%D0%B1%D0%B8%D1%81%D1%81%D0%B8%D0%BD%D0%B5%D1%86%201889.%20%D0%A2%D0%BE%D0%BC%201%22%20%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 582761,
+      "work_title": "Казачонок 1862. Том 9",
+      "official_url": "https://author.today/work/582761",
+      "query": "\"Казачонок 1862. Том 9\" \"Сергей Насоновский\" -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201862.%20%D0%A2%D0%BE%D0%BC%209%22%20%22%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9%20%D0%9D%D0%B0%D1%81%D0%BE%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%22%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 582761,
+      "work_title": "Казачонок 1862. Том 9",
+      "official_url": "https://author.today/work/582761",
+      "query": "\"Казачонок 1862. Том 9\" читать онлайн -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201862.%20%D0%A2%D0%BE%D0%BC%209%22%20%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 582761,
+      "work_title": "Казачонок 1862. Том 9",
+      "official_url": "https://author.today/work/582761",
+      "query": "\"Казачонок 1862. Том 9\" скачать -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201862.%20%D0%A2%D0%BE%D0%BC%209%22%20%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 574469,
+      "work_title": "Казачонок 1861. Том 8",
+      "official_url": "https://author.today/work/574469",
+      "query": "\"Казачонок 1861. Том 8\" \"Сергей Насоновский\" -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201861.%20%D0%A2%D0%BE%D0%BC%208%22%20%22%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9%20%D0%9D%D0%B0%D1%81%D0%BE%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%22%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 574469,
+      "work_title": "Казачонок 1861. Том 8",
+      "official_url": "https://author.today/work/574469",
+      "query": "\"Казачонок 1861. Том 8\" читать онлайн -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201861.%20%D0%A2%D0%BE%D0%BC%208%22%20%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 574469,
+      "work_title": "Казачонок 1861. Том 8",
+      "official_url": "https://author.today/work/574469",
+      "query": "\"Казачонок 1861. Том 8\" скачать -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201861.%20%D0%A2%D0%BE%D0%BC%208%22%20%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 565322,
+      "work_title": "Казачонок 1861. Том 7",
+      "official_url": "https://author.today/work/565322",
+      "query": "\"Казачонок 1861. Том 7\" \"Сергей Насоновский\" -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201861.%20%D0%A2%D0%BE%D0%BC%207%22%20%22%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9%20%D0%9D%D0%B0%D1%81%D0%BE%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%22%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 565322,
+      "work_title": "Казачонок 1861. Том 7",
+      "official_url": "https://author.today/work/565322",
+      "query": "\"Казачонок 1861. Том 7\" читать онлайн -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201861.%20%D0%A2%D0%BE%D0%BC%207%22%20%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 565322,
+      "work_title": "Казачонок 1861. Том 7",
+      "official_url": "https://author.today/work/565322",
+      "query": "\"Казачонок 1861. Том 7\" скачать -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201861.%20%D0%A2%D0%BE%D0%BC%207%22%20%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 558844,
+      "work_title": "Казачонок 1861. Том 6",
+      "official_url": "https://author.today/work/558844",
+      "query": "\"Казачонок 1861. Том 6\" \"Сергей Насоновский\" -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201861.%20%D0%A2%D0%BE%D0%BC%206%22%20%22%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9%20%D0%9D%D0%B0%D1%81%D0%BE%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%22%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 558844,
+      "work_title": "Казачонок 1861. Том 6",
+      "official_url": "https://author.today/work/558844",
+      "query": "\"Казачонок 1861. Том 6\" читать онлайн -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201861.%20%D0%A2%D0%BE%D0%BC%206%22%20%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 558844,
+      "work_title": "Казачонок 1861. Том 6",
+      "official_url": "https://author.today/work/558844",
+      "query": "\"Казачонок 1861. Том 6\" скачать -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201861.%20%D0%A2%D0%BE%D0%BC%206%22%20%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 548956,
+      "work_title": "Казачонок 1861. Том 5",
+      "official_url": "https://author.today/work/548956",
+      "query": "\"Казачонок 1861. Том 5\" \"Сергей Насоновский\" -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201861.%20%D0%A2%D0%BE%D0%BC%205%22%20%22%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9%20%D0%9D%D0%B0%D1%81%D0%BE%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%22%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 548956,
+      "work_title": "Казачонок 1861. Том 5",
+      "official_url": "https://author.today/work/548956",
+      "query": "\"Казачонок 1861. Том 5\" читать онлайн -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201861.%20%D0%A2%D0%BE%D0%BC%205%22%20%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "work_id": 548956,
+      "work_title": "Казачонок 1861. Том 5",
+      "official_url": "https://author.today/work/548956",
+      "query": "\"Казачонок 1861. Том 5\" скачать -site:author.today",
+      "search_url": "https://search.brave.com/search?q=%22%D0%9A%D0%B0%D0%B7%D0%B0%D1%87%D0%BE%D0%BD%D0%BE%D0%BA%201861.%20%D0%A2%D0%BE%D0%BC%205%22%20%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C%20-site%3Aauthor.today&source=web",
+      "results": [],
+      "http_ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
+    }
+  ]
+}
